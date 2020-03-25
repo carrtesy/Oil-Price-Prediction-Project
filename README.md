@@ -14,3 +14,8 @@
 
 [wti]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/DCOILWTICO.csv
 [brent]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/DCOILBRENTEU.csv
+
+## Dependency
+- python 3.8.1
+- pandas 1.0.3
+- matplotlib 3.1.3
