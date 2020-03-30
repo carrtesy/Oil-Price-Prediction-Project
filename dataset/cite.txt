@@ -1,0 +1,47 @@
+USCPI CPALTT01USM657N
+Units:  Growth Rate Previous Period, Not Seasonally Adjusted
+Frequency:  Monthly
+1960-01-01 2020-01-01
+Organization for Economic Co-operation and Development, Consumer Price Index: Total All Items for the United States [CPALTT01USM657N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPALTT01USM657N, March 28, 2020.
+
+USCPI-energy CPGREN01USM657N
+Growth Rate Previous Period, Not Seasonally Adjusted
+Monthly
+1960-01-01 2020-01-01
+Organization for Economic Co-operation and Development, Consumer Price Index: OECD Groups: Fuel, Electricity, and Gasoline for the United States [CPGREN01USM657N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPGREN01USM657N, March 29, 2020.
+
+USPPI PPIACO
+Units:  Index 1982=100, Not Seasonally Adjusted
+Frequency:  Monthly
+U.S. Bureau of Labor Statistics, Producer Price Index for All Commodities [PPIACO], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/PPIACO, March 28, 2020.
+
+USPPI-energy WPSFD4121
+Units:  Index 1982=100, Seasonally Adjusted
+Frequency:  Monthly
+Suggested Citation:
+U.S. Bureau of Labor Statistics, Producer Price Index by Commodity for Final Demand: Finished Consumer Energy Goods [WPSFD4121], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/WPSFD4121, March 29, 2020.
+
+EUPPI PIEAMP02EUM659N
+Units:  Growth Rate Same Period Previous Year, Not Seasonally Adjusted
+Frequency:  Monthly
+Organization for Economic Co-operation and Development, Producer Prices Index: Economic Activities: Domestic Manufacturing for the European Union [PIEAMP02EUM659N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/PIEAMP02EUM659N, March 29, 2020.
+
+s&p ^GSPC
+https://finance.yahoo.com/quote/%5EGSPC/history?p=%5EGSPC
+
+djia ^DJI
+https://finance.yahoo.com/quote/%5EDJI/history?p=%5EDJI
+
+NYSE ^NYA
+https://finance.yahoo.com/quote/%5ENYA?p=^NYA&.tsrc=fin-srch
+
+Nasdaq ^IXIC
+https://finance.yahoo.com/quote/%5EIXIC/history?p=%5EIXIC
+
+gold GOLDAMGBD228NLBM
+Units:  U.S. Dollars per Troy Ounce, Not Seasonally Adjusted
+Frequency:  Daily
+Suggested Citation:
+ICE Benchmark Administration Limited (IBA), Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars [GOLDAMGBD228NLBM], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM, March 28, 2020.
+
+
