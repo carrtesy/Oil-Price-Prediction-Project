@@ -13,7 +13,7 @@
   - 1987-05-20 ~ 2020-03-13
   - U.S. Energy Information Administration, Crude Oil Prices: Brent - Europe [DCOILBRENTEU], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DCOILBRENTEU, March 24, 2020.
 
-### Inputs
+### Inputs - oil related
 - [Crude Oil Production][crude oil production]
   - Monthly
   - Thousands Barrels per day, including lease condensates
@@ -63,6 +63,61 @@
   - categorized into US Field Production of Crude Oil, US crude oil imports excluding SPR, and US crude oil SPR imports
   - U.S. Energy Information Administration, Petroleum & Other Liquids; https://www.eia.gov/dnav/pet/pet_cons_psup_dc_nus_mbbl_m.htm, March 30, 2020.
 
+### Inputs - Price level
+- [uscpi][uscpi]
+  - Monthly
+  - Growth Rate Previous Period, Not Seasonally Adjusted
+  - 1960-01-01 ~ 2020-01-01
+  - Organization for Economic Co-operation and Development, Consumer Price Index: Total All Items for the United States [CPALTT01USM657N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPALTT01USM657N, March 28, 2020.
+
+- [uscpi_energy][uscpi_energy]
+  - Monthly
+  - Growth Rate Previous Period, Not Seasonally Adjusted
+  - 1960-01-01 ~ 2020-01-01
+  - Organization for Economic Co-operation and Development, Consumer Price Index: OECD Groups: Fuel, Electricity, and Gasoline for the United States [CPGREN01USM657N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPGREN01USM657N, March 29, 2020.
+
+- [usppi][usppi]
+  - Monthly
+  - Index 1982=100, Not Seasonally Adjusted
+  - U.S. Bureau of Labor Statistics, Producer Price Index for All Commodities [PPIACO], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/PPIACO, March 28, 2020.
+
+- [usppi_energy][usppi_energy] 
+  - Monthly
+  - Index 1982=100, Seasonally Adjusted
+  - U.S. Bureau of Labor Statistics, Producer Price Index by Commodity for Final Demand: Finished Consumer Energy Goods [WPSFD4121], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/WPSFD4121, March 29, 2020.
+
+- [euppi][euppi]
+  - Monthly
+  - Growth Rate Same Period Previous Year, Not Seasonally Adjusted
+  - Organization for Economic Co-operation and Development, Producer Prices Index: Economic Activities: Domestic Manufacturing for the European Union [PIEAMP02EUM659N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/PIEAMP02EUM659N, March 29, 2020.
+
+
+### Inputs - Stock markets
+- [snp][snp] 
+  - daily
+  - https://finance.yahoo.com/quote/%5EGSPC/history?p=%5EGSPC
+- [djia][djia]
+  - daily
+  - https://finance.yahoo.com/quote/%5EDJI/history?p=%5EDJI
+- [nasdaq][nasdaq]
+  - daily
+  - https://finance.yahoo.com/quote/%5EIXIC/history?p=%5EIXIC
+- [nyse][nyse]
+  - daily
+  - https://finance.yahoo.com/quote/%5ENYA?p=^NYA&.tsrc=fin-srch
+
+### Inputs - Exchange Rates
+- [euro_dollar][euro_dollar]
+  - Daily
+  - U.S. Dollars to One Euro, Not Seasonally Adjusted
+  - Board of Governors of the Federal Reserve System (US), U.S. / Euro Foreign Exchange Rate [DEXUSEU], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DEXUSEU, March 30, 2020.
+
+### Inputs - others
+- [gold][gold]
+  - Frequency:  Daily
+  - U.S. Dollars per Troy Ounce, Not Seasonally Adjusted
+  - ICE Benchmark Administration Limited (IBA), Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars [GOLDAMGBD228NLBM], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM, March 28, 2020.
+
 [wti]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/DCOILWTICO.csv
 [brent]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/DCOILBRENTEU.csv
 [crude oil production]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/crudeoil_production1.csv
@@ -74,6 +129,17 @@
 [SPR stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/SPR_stocks.csv
 [nonSPR stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/Non-SPR_stocks.csv
 [US supply]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/crudeoil_supplysummary.csv
+[uscpi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/USCPI.csv
+[uscpi_energy]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/USCPI_energy.csv
+[usppi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/USPPI.csv
+[usppi_energy]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/USPPI_energe.csv
+[euppi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/EUPPI.csv
+[snp]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/s%26p.csv
+[djia]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/djia.csv
+[nasdaq]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/nasdaq.csv
+[nyse]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/nyse.csv
+[euro_dollar]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/euro_dollar.csv
+[gold]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/gold.csv
 
 ## Dependency
 - python 3.8.1
