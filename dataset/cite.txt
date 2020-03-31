@@ -44,4 +44,10 @@ Frequency:  Daily
 Suggested Citation:
 ICE Benchmark Administration Limited (IBA), Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars [GOLDAMGBD228NLBM], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM, March 28, 2020.
 
+eurodollar
+Units:  U.S. Dollars to One Euro, Not Seasonally Adjusted
+Frequency:  Daily
+Suggested Citation:
+Board of Governors of the Federal Reserve System (US), U.S. / Euro Foreign Exchange Rate [DEXUSEU], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DEXUSEU, March 30, 2020.
+
 
