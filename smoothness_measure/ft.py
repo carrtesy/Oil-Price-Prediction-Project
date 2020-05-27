@@ -5,7 +5,7 @@ import csv
 def readData(startdate, enddate):
     print("Reading dataset: [", startdate, ' ~ ' , enddate , "]")
     data = []
-    f = open('./dataset/wti.csv', 'r')
+    f = open('./wti.csv', 'r')
     csvReader = csv.reader(f, delimiter = ",")
     start = 0
     for i in csvReader:
