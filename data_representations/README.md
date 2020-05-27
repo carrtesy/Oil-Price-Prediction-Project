@@ -118,25 +118,25 @@
   - U.S. Dollars per Troy Ounce, Not Seasonally Adjusted
   - ICE Benchmark Administration Limited (IBA), Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars [GOLDAMGBD228NLBM], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM, March 28, 2020.
 
-[wti]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/DCOILWTICO.csv
-[brent]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/DCOILBRENTEU.csv
-[crude oil production]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/crudeoil_production1.csv
-[refined consumption]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/OECD_consumption_refinedpetroleum_1.csv
-[petroleum consumption]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/OECD_consumption_petroleum_1.csv
-[tight oil]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/US-tight-oil-production.csv
-[henry hub]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/henryhubnaturalgas.csv
-[total stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/total_stocks.csv
-[SPR stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/SPR_stocks.csv
-[nonSPR stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/Non-SPR_stocks.csv
-[US supply]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/crudeoil_supplysummary.csv
-[uscpi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/USCPI.csv
-[uscpi_energy]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/USCPI_energy.csv
-[usppi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/USPPI.csv
-[usppi_energy]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/USPPI_energe.csv
-[euppi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/EUPPI.csv
-[snp]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/s%26p.csv
-[djia]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/djia.csv
-[nasdaq]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/nasdaq.csv
-[nyse]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/nyse.csv
-[euro_dollar]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/euro_dollar.csv
-[gold]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/data_representations/dataset/gold.csv
+[wti]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/DCOILWTICO.csv
+[brent]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/DCOILBRENTEU.csv
+[crude oil production]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/crudeoil_production1.csv
+[refined consumption]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/OECD_consumption_refinedpetroleum_1.csv
+[petroleum consumption]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/OECD_consumption_petroleum_1.csv
+[tight oil]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/US-tight-oil-production.csv
+[henry hub]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/henryhubnaturalgas.csv
+[total stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/total_stocks.csv
+[SPR stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/SPR_stocks.csv
+[nonSPR stock]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/Non-SPR_stocks.csv
+[US supply]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/crudeoil_supplysummary.csv
+[uscpi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/USCPI.csv
+[uscpi_energy]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/USCPI_energy.csv
+[usppi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/USPPI.csv
+[usppi_energy]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/USPPI_energe.csv
+[euppi]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/EUPPI.csv
+[snp]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/s%26p.csv
+[djia]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/djia.csv
+[nasdaq]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/nasdaq.csv
+[nyse]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/nyse.csv
+[euro_dollar]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/euro_dollar.csv
+[gold]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/gold.csv
