@@ -132,11 +132,13 @@ def EstimatedNoiseVariance(X):
         estSig += dx ** 2
 
     estSig /= 2
-    chisqCoeff = chi2.isf(1 - alpha/2, n-1)
+    chisqCoeff_max = chi2.isf(1 - alpha/2, n-1)
+    chisqCoeff_min = chi2.isf(alpha/2,n-1)
 
-    res = estSig / chisqCoeff
+    res_max = estSig / chisqCoeff_max
+    res_min = estSig / chisqCoeff_min
 
-    return res
+    return res_max, res_min
 
 def Phase1(x, y, e, m, alpha, kernelMeans, kernelSigma, kernelWeights, invPSI):
     m += 1
