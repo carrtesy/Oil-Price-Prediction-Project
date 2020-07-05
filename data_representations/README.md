@@ -2,11 +2,22 @@
 
 ## Dataset Lists & Sources
 ### Outputs
-- [WTI][wti]
+- [WTI_daily][wti_daily]
   - Daily
   - Dollars per Barrel, Not seasonally adjusted
   - 1986-01-02 ~ 2020-03-13 
   - U.S. Energy Information Administration, Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma [DCOILWTICO], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DCOILWTICO, March 24, 2020.
+- [WTI_week][wti_week]
+  - weekly
+  - Dollars per Barrel, Not seasonally adjusted
+  - 1986-01-03 ~ 2020-06-26
+  - U.S. Energy Information Administration, Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma [WCOILWTICO], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/WCOILWTICO, July 5, 2020.
+- [WTI_month][wti_month]
+  - monthly
+  - Dollars per Barrel, Not seasonally adjusted
+  - 1946-01-01 ~ 2020-06-01
+  - Federal Reserve Bank of St. Louis, Spot Crude Oil Price: West Texas Intermediate (WTI) [WTISPLC], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/WTISPLC, July 4, 2020.
+
 - [Brent][brent] 
   - Daily
   - Dollars per Barrel, Not seasonally adjusted
@@ -118,7 +129,9 @@
   - U.S. Dollars per Troy Ounce, Not Seasonally Adjusted
   - ICE Benchmark Administration Limited (IBA), Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars [GOLDAMGBD228NLBM], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM, March 28, 2020.
 
-[wti]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/DCOILWTICO.csv
+[wti_daily]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/wti.csv
+[wti_week]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/wti_week.csv
+[wti_month]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/wti_month.csv
 [brent]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/DCOILBRENTEU.csv
 [crude oil production]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/crudeoil_production1.csv
 [refined consumption]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations/dataset/OECD_consumption_refinedpetroleum_1.csv

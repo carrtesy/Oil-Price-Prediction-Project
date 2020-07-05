@@ -2,7 +2,7 @@
 
 ## Smoothness measure
 
-Result
+Result (daily)
 ```
 Reading dataset: [ 2000-01-03  ~  2020-03-13 ]
 start date checked:  2000-01-03
