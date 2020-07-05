@@ -1,6 +1,6 @@
 import numpy as np
 import numpy.linalg as lin
-import ft
+import ft_monthly as ft
 import matplotlib.pyplot as plt
 
 def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
@@ -58,8 +58,8 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
         err, rmse, rsq = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
         terr, trmse, trsq = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
         #print(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f') % (m, rmse, rsq, m, trmse, trsq))
-        #trainerr.append(rmse)
-        #validerr.append(trmse)
+        trainerr.append(rmse)
+        validerr.append(trmse)
 
         if m > Kernel_Num:
             break
@@ -90,13 +90,11 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     print(confintmin)
     plt.plot(trainerr,'r')
     plt.plot(validerr,'b')
-    plt.plot(confintmax, 'g')
-    plt.plot(confintmin, 'g')
-    plt.xticks(np.arange(0,100,5)) #x축 눈금
+    plt.xticks(np.arange(0,100,2))#x축 눈금
     plt.show()
 
     # 커널 몇개를 할것인가?
-    m = 45
+    m = 28
 
     kernelMeans = kernelMeans[:m]
     kernelSigma = kernelSigma[:m]
