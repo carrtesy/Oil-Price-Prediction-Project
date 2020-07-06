@@ -1,6 +1,8 @@
 import numpy as np
 import numpy.linalg as lin
-import ft_monthly as ft
+#import ft as ft
+import ft_weekly as ft
+#import ft_monthly as ft
 import matplotlib.pyplot as plt
 
 def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
