@@ -92,7 +92,7 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     print(confintmin)
     plt.plot(trainerr,'r')
     plt.plot(validerr,'b')
-    plt.xticks(np.arange(0,100,2))#x축 눈금
+    plt.xticks(np.arange(0,100,5))#x축 눈금
     plt.show()
 
     # 커널 몇개를 할것인가?
