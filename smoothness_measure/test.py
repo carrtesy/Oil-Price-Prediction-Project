@@ -1,64 +1,50 @@
 import GKFN
 import ft
-import ft_monthly
-import ft_weekly
 
-data = ft.readData('2000-01-03', '2020-03-13')
-#data = ft_weekly.readData('1986-01-03', '2020-06-26')
-#data = ft_monthly.readData('1960-01-01', '2020-06-01')
+#mode = "daily"
+mode = "weekly"
+#mode = "monthly"
 
+dailyfile = open('./daily/wti.csv', 'r')
+weeklyfile = open('./weekly/wti_week.csv', 'r')
+monthlyfile = open('./monthly/wti_month.csv', 'r')
+
+if(mode == "daily"): # Daily
+    print("===DAILY DATASET===")
+    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    E = 5
+    tau = 3
+elif(mode == "weekly"): # Weekly
+    print("===WEEKLY DATASET===")
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
+    E = 4
+    tau = 5
+elif(mode == "monthly"): # Monthly
+    print("===MONTHLY DATASET===")
+    data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
+    E = 4
+    tau = 2
+
+
+P = 4 # P days/weeks/months after
+dataX, dataY = ft.extracting(tau, E, P, data)
 test_ratio = 0.3
 test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
 
-
-# 선택된 E, tau 값을 이용하여 데이터를 재구성합니다.
-# Daily
-E = 5
-tau = 3
-P = 1
-
-
-# Weekly
-'''
-E = 4
-tau = 5
-P = 1
-
-'''
-
-# Monthly
-'''
-E = 4
-tau = 2
-P = 1
-'''
-
-# train set 및 test set을 구성합니다.
-dataX, dataY  = ft.extracting(tau, E, P, data) #daily
-# dataX, dataY  = ft_weekly.extracting(tau, E, P, data) # weekly
-#dataX, dataY  = ft_monthly.extracting(tau, E, P, data) # monthly
-
+# Train
 trX = dataX[:-test_size]
-teX = dataX[-test_size:]
 trY = dataY[:-test_size]
+
+# Test
+teX = dataX[-test_size:]
 teY = dataY[-test_size:]
 
-
-'''
-
-trX = dataX[:-142]
-teX = dataX[-142:]
-trY = dataY[:-142]
-teY = dataY[-142:]
-
-'''
-
-# parameter를 설정하고 학습을 시킵니다.
+# parameter
 alpha = 0.5
 loop = 5
-Kernel_Num = 28
+Kernel_Num = 100
 
 GKFN.GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num)
 

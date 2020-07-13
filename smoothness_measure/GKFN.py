@@ -1,12 +1,11 @@
 import numpy as np
 import numpy.linalg as lin
-#import ft as ft
-import ft_weekly as ft
-#import ft_monthly as ft
+import ft as ft
 import matplotlib.pyplot as plt
 
 def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     """model training"""
+    f = open('result.txt', 'w')
 
     #initial model parameter
     m = 0 # kernelnumber
@@ -51,7 +50,6 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     estv = ft.EstimatedNoiseVariance(trY)
     # print(np.sqrt(estv))
 
-
     trainerr = []
     validerr = []
 
@@ -86,14 +84,17 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
         m, kernelMeans, kernelSigma, kernelWeights, invPSI = ft.Phase1(x, y, e, m, alpha, kernelMeans, kernelSigma, kernelWeights, invPSI)
 
 
-    # # 커널수에 따른 에러
+    ## 커널수에 따른 에러
     confintmax, confintmin = ft.EstimatedNoiseVariance(trY)
     print(confintmax)
     print(confintmin)
     plt.plot(trainerr,'r')
     plt.plot(validerr,'b')
+    plt.legend(["Training Error", "Validation Error"])
     plt.xticks(np.arange(0,100,5))#x축 눈금
     plt.show()
+
+    f.write(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax) + '\n')
 
     # 커널 몇개를 할것인가?
     m = 28
@@ -101,8 +102,6 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     kernelMeans = kernelMeans[:m]
     kernelSigma = kernelSigma[:m]
     kernelWeights = kernelWeights[:m]
-
-
 
     #Phase 2 & Phase3 : kernel parameter 학습
     for i in range(loop):
@@ -143,6 +142,10 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
 
     plt.plot(teY,'r')
     plt.plot(pre,'b')
-    plt.show()
+    plt.legend(["Test Data", "Prediction"])
 
+
+    plt.show()
+    f.write(format('rmse: %f, R2: %f') % (rmse, rsq) + '\n')
+    f.close()
     return rmse, rsq

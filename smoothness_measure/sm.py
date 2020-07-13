@@ -1,15 +1,23 @@
-#import ft_monthly
-import ft_weekly
-"""Data Load + data structure 결정"""
-# Data Load
-# 이 데이터 대신 본인 데이터를 쓰시면 됩니다.
+import ft
 
-data =ft_weekly.readData('1986-01-03', '2020-06-26')
-#data =ft_monthly.readData('1960-01-01', '2020-06-01')
+#mode = "daily"
+mode = "weekly"
+#mode = "monthly"
+
+dailyfile = open('./daily/wti.csv', 'r')
+weeklyfile = open('./weekly/wti_week.csv', 'r')
+monthlyfile = open('./monthly/wti_month.csv', 'r')
+
+if(mode == "daily"): # Daily
+    print("===DAILY DATASET===")
+    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+elif(mode == "weekly"): # Weekly
+    print("===WEEKLY DATASET===")
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
+elif(mode == "monthly"): # Monthly
+    print("===MONTHLY DATASET===")
+    data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
 
 # data에 대하여 E, tau에 따른 smoothness 값 측정
 # 이 함수를 실행시키면 폴더에 sm.txt라는 파일이 생성됩니다.
-ft_weekly.smoothnessMeasure(data)
-
-
-
+ft.smoothnessMeasure(data)

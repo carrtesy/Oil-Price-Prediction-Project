@@ -2,10 +2,10 @@ import numpy as np
 from scipy.stats import chi2
 import csv
 
-def readData(startdate, enddate):
+def readData(inputfile, startdate, enddate):
     print("Reading dataset: [", startdate, ' ~ ' , enddate , "]")
     data = []
-    f = open('./daily/wti.csv', 'r')
+    f = inputfile
     csvReader = csv.reader(f, delimiter = ",")
     start = 0
     for i in csvReader:
