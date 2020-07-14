@@ -63,6 +63,20 @@ def extracting(tau, E, P, obj):
         out_put.append(obj[i+P])
     return np.array(in_put), np.array(out_put)
 
+def extracting_recursive(tau, E, P, t, pred, obj):
+    in_put = []
+    out_put = []
+    a = tau * (E-1)
+    for i in range(a, len(obj)-P):
+        b=[]
+        for j in range(i-a, i+tau-tau*t, tau):
+            b.append(obj[j])
+        for k in range(t, 0, -1):
+            b.append(pred[i-(k-1)*tau])
+        in_put.append(b)
+        out_put.append(obj[i+P])
+    return np.array(in_put), np.array(out_put)
+
 
 def GaussianKernel(x, mu, sig):
     diff = x - mu
