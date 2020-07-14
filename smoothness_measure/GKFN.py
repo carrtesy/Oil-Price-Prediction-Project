@@ -150,6 +150,11 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     f.write(format('rmse: %f, R2: %f') % (rmse, rsq) + '\n')
 
     pre = teY - err
+    plt.plot(teY, 'r')
+    plt.plot(pre, 'b')
+    plt.legend(["Test Data", "Prediction"])
+    plt.savefig("./kernel" + str(m) + "_prediction_graph.png")
+    plt.show()
 
     log.close()
     f.close()
