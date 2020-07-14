@@ -15,10 +15,18 @@
       <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/w_plot.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/스크린샷, 2020-07-06 22-05-51.png" beforeDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,7 +53,19 @@
       <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.test_recursive">
     <configuration name="GKFN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Oil-Price-Prediction-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,7 +136,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_HOME" value="C:\Anaconda\envs\tensorflow\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/smoothness_measure" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -130,8 +150,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_recursive" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Oil-Price-Prediction-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/smoothness_measure" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smoothness_measure/test_recursive.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.ft_monthly" />
+      <item itemvalue="Python.GKFN" />
+      <item itemvalue="Python.sm" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.test_recursive" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_recursive" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.sm" />
         <item itemvalue="Python.ft_monthly" />
@@ -157,12 +206,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="660" y="111" width="657" height="883" key="#GKFN" timestamp="1594626568326">
