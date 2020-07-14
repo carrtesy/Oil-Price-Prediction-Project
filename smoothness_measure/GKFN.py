@@ -103,7 +103,8 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     # 커널 몇개를 할것인가?
     #m = 45 # daily
     #m = 28 # weekly
-    m = 52  # monthly from monthly data
+    m= 30 #weekly_tau1
+    #m = 35  # monthly from monthly data
     #m = 28 # monthly from weekly data
 
     kernelMeans = kernelMeans[:m]
@@ -149,12 +150,6 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     f.write(format('rmse: %f, R2: %f') % (rmse, rsq) + '\n')
 
     pre = teY - err
-
-    plt.plot(teY,'r')
-    plt.plot(pre,'b')
-    plt.legend(["Test Data", "Prediction"])
-    plt.savefig("./kernel" + str(m) + "_prediction_graph.png")
-    plt.show()
 
     log.close()
     f.close()
