@@ -32,7 +32,7 @@ elif(mode == "monthly"): # Monthly
     tau = 2
 
 
-P = 1 # P days/weeks/months after
+P = 4 # P days/weeks/months after
 dataX, dataY = ft.extracting(tau, E, P, data)
 test_ratio = 0.3
 test_size = int(len(data) * test_ratio)
