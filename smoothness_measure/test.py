@@ -23,7 +23,7 @@ elif(mode == "weekly_origin"): # Weekly_original
 elif(mode == "weekly_tau1"): # Weekly_tau1
     print("===WEEKLY DATASET===")
     data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
-    E = 6
+    E = 10
     tau = 1
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")

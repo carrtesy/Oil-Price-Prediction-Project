@@ -34,7 +34,8 @@ def readData(inputfile, startdate, enddate):
 
 def smoothnessMeasure(data) :
     # Smoothness Measure
-    P = 1
+    #P = 1 # normal
+    P = 4 # for weekly -> monthly
     SM_list = []
     f = open('sm.txt', 'w')
     for E in range(2, 11):

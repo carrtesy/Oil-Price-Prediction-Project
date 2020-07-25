@@ -1,19 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4018da09-68cf-4dc5-bd32-9f550d8c147e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Oil-Price-Prediction-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Oil-Price-Prediction-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smoothness_measure/GKFN.py" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/GKFN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/kernel28_prediction_graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/kernel28_test_rmse.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/result_from_weeklydata.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/rmse_from_weekly_data.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data/sm.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/tau2_E4_error_graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/test_from_weekly_data.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/kernel28_prediction_graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/w_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/스크린샷, 2020-07-06 22-05-51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/ft.py" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/ft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel20/kernel20_prediction_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel20/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel20/plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel20/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel28/kernel28_prediction_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel28/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel28/plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel28/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel52/kernel52_prediction_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel52/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel52/plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/kernel52/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/sm.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel42/kernel42_prediction_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel42/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel42/plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel42/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel73/kernel73_prediction_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel73/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel73/plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/tau1kernel73/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +63,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/dongminkim0220/Oil-Price-Prediction-Project.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1cfvudygHawJNKad5onwfCp3Ro2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,7 +78,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Oil-Price-Prediction-Project-master" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -125,7 +165,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\user\anaconda3\envs\Oil-Price-Prediction-Project\python.exe" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/oil/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/smoothness_measure" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -161,8 +201,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.ft_monthly" />
       <item itemvalue="Python.GKFN" />
+      <item itemvalue="Python.ft_monthly" />
       <item itemvalue="Python.sm" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test_recursive" />
@@ -203,18 +243,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="660" y="111" width="657" height="883" key="#GKFN" timestamp="1594626568326">
+    <state x="660" y="111" width="657" height="883" key="#GKFN" timestamp="1595644994520">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="660" y="111" width="657" height="883" key="#GKFN/67.27.1853.1053@67.27.1853.1053" timestamp="1594626568326" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594778353640">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="660" y="111" width="657" height="883" key="#GKFN/67.27.1853.1053@67.27.1853.1053" timestamp="1595644994520" />
+    <state x="467" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595649807677">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594778353640" />
-    <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594723910172">
+    <state x="467" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595649807677" />
+    <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595650326555">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594723910172" />
+    <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595650326555" />
     <state x="660" y="111" width="657" height="883" key="#sm" timestamp="1593964531221">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -223,38 +264,45 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="660" y="111" width="657" height="883" key="#test/67.27.1853.1053@67.27.1853.1053" timestamp="1594000332796" />
-    <state x="819" y="321" width="424" height="484" key="FileChooserDialogImpl" timestamp="1594778163312">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="857" y="352" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595645447888">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="819" y="321" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594778163312" />
     <state x="2739" y="333" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594104339624" />
-    <state width="1362" height="266" key="GridCell.Tab.0.bottom" timestamp="1594779457457">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="857" y="352" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595645447888" />
+    <state x="2739" y="333" key="FileChooserDialogImpl/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595486583603" />
+    <state width="1826" height="308" key="GridCell.Tab.0.bottom" timestamp="1595650345311">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
-    <state width="1826" height="299" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1594733057929" />
-    <state width="1893" height="303" key="GridCell.Tab.0.bottom/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594626004981" />
-    <state width="1362" height="266" key="GridCell.Tab.0.center" timestamp="1594779457457">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1826" height="308" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1595650345311" />
+    <state width="1893" height="318" key="GridCell.Tab.0.bottom/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595319845202" />
+    <state width="1826" height="308" key="GridCell.Tab.0.center" timestamp="1595650345310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
-    <state width="1826" height="299" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1594733057928" />
-    <state width="1893" height="303" key="GridCell.Tab.0.center/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594626004981" />
-    <state width="1362" height="266" key="GridCell.Tab.0.left" timestamp="1594779457457">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1826" height="308" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1595650345310" />
+    <state width="1893" height="318" key="GridCell.Tab.0.center/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595319845202" />
+    <state width="1826" height="308" key="GridCell.Tab.0.left" timestamp="1595650345310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
-    <state width="1826" height="299" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1594733057928" />
-    <state width="1893" height="303" key="GridCell.Tab.0.left/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594626004981" />
-    <state width="1362" height="266" key="GridCell.Tab.0.right" timestamp="1594779457457">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1826" height="308" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1595650345310" />
+    <state width="1893" height="318" key="GridCell.Tab.0.left/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595319845202" />
+    <state width="1826" height="308" key="GridCell.Tab.0.right" timestamp="1595650345310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
-    <state width="1826" height="299" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1594733057929" />
-    <state width="1893" height="303" key="GridCell.Tab.0.right/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594626004981" />
-    <state x="482" y="184" key="SettingsEditor" timestamp="1594778271793">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1826" height="308" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1595650345310" />
+    <state width="1893" height="318" key="GridCell.Tab.0.right/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595319845202" />
+    <state x="532" y="213" key="SettingsEditor" timestamp="1595645236817">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="184" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594778271793" />
+    <state x="532" y="213" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1595645236817" />
+    <state x="718" y="433" width="540" height="239" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1595645286233">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="718" y="433" width="540" height="239" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595645286233" />
   </component>
 </project>
