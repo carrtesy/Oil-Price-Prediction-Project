@@ -105,7 +105,8 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     #m = 28 # weekly
     #m= 30 #weekly_tau1
     #m = 73 #monthly_from_weekly_using_tau1
-    m = 10 #monthly_from_weekly_using_tau1 fixed p =4
+    m = 8  # monthly_from_weekly fixed p =4
+    #m = 10 #monthly_from_weekly_using_tau1 fixed p =4
     #m = 35  # monthly from monthly data
     #m = 28 # monthly from weekly data
 
