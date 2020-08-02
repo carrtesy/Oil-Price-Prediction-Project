@@ -53,31 +53,44 @@ def smoothnessMeasure(data) :
 
 
 def extracting(tau, E, P, obj):
-    in_put = []
-    out_put = []
+    input = []
+    output = []
+    index = []
     a = tau * (E-1)
     for i in range(a, len(obj)-P):
         b=[]
         for j in range(i-a, i+tau, tau):
             b.append(obj[j])
-        in_put.append(b)
-        out_put.append(obj[i+P])
-    return np.array(in_put), np.array(out_put)
+        input.append(b)
+        output.append(obj[i+P])
+        index.append(i+P)
+    return np.array(input), np.array(output), np.array(index)
 
-def extracting_recursive(tau, E, P, t, pred, obj):
-    in_put = []
-    out_put = []
-    a = tau * (E-1)
-    for i in range(a, len(obj)-P):
-        b=[]
-        for j in range(i-a, i+tau-tau*t, tau):
-            b.append(obj[j])
-        for k in range(t, 0, -1):
-            b.append(pred[i-(k-1)*tau])
-        in_put.append(b)
-        out_put.append(obj[i+P])
-    return np.array(in_put), np.array(out_put)
+def extracting_on_index(tau, E, P, obj, index):
+    input = []
+    idx = index
+    for j in range(E):
+        input.insert(0, obj[idx]) # FIFO push
+        idx -= tau
+    return input, index+P
+'''
+def extracting_on_index(tau, E, P, obj, index_arr):
+    input = []
+    output = []
+    index = []
 
+    for i in range(len(index_arr)):
+        b = []
+        idx = index_arr[i]
+        index.append(idx + P)
+        for j in range(E):
+            b.insert(0, obj[idx]) # FIFO push
+            idx -= tau
+        input.append(b)
+        output.append(obj[idx + P])
+
+    return np.array(input), np.array(output), np.array(index)
+'''
 
 def GaussianKernel(x, mu, sig):
     diff = x - mu
@@ -131,6 +144,13 @@ def loss(X, Y, kernelMeans, kernelSigma, kernelWeights):
     err = Y - Yest
     rmse = rMSE(Y, Yest)
     rsq = R2(Y, Yest)
+    
+    return err, rmse, rsq
+
+def loss_with_prediction_array(Y, Y_hat):
+    err = Y - Y_hat
+    rmse = rMSE(Y, Y_hat)
+    rsq = R2(Y, Y_hat)
     
     return err, rmse, rsq
     

@@ -47,6 +47,9 @@ trY = dataY[:-test_size]
 teX = dataX[-test_size:]
 teY = dataY[-test_size:]
 
+print(teX)
+print(teY)
+
 # parameter
 alpha = 0.5
 loop = 5

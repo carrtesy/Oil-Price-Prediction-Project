@@ -2,12 +2,11 @@ import numpy as np
 import numpy.linalg as lin
 import ft as ft
 import matplotlib.pyplot as plt
+import copy
 
-def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
+def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     """model training"""
-    f = open('./result.txt', 'w')
     log = open('./log.txt', 'w')
-
 
     #initial model parameter
     m = 0 # kernelnumber
@@ -47,7 +46,6 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     init_y = np.array([y1,y2])
     kernelWeights = np.matmul(invPSI, init_y)
 
-
     #Phase 1
     estv = ft.EstimatedNoiseVariance(trY)
     # print(np.sqrt(estv))
@@ -66,14 +64,6 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
 
         if m > Kernel_Num:
             break
-    #    if (rmse**2) < estv:
-    #        break
-    #    if rsq > 0.9:
-    #        break
-    ##    if np.abs(temp-rsq) < 1e-5:
-    #        break
-    #
-    #    temp = rsq
 
         if m % 10 == 0:
             print(m)
@@ -98,14 +88,14 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     plt.savefig('./plot.png')
     plt.show()
 
-    f.write(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax) + '\n')
+    log.write(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax) + '\n')
 
     # 커널 몇개를 할것인가?
     #m = 45 # daily
     #m = 28 # weekly
-    #m= 30 #weekly_tau1
+    m= 30 #weekly_tau1
     #m = 73 #monthly_from_weekly_using_tau1
-    m = 8  # monthly_from_weekly fixed p =4
+    #m = 8  # monthly_from_weekly fixed p =4
     #m = 10 #monthly_from_weekly_using_tau1 fixed p =4
     #m = 35  # monthly from monthly data
     #m = 28 # monthly from weekly data
@@ -146,9 +136,45 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
 
             B, kernelWeights = ft.Phase3(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights)
 
-    """model test"""
+    log.close()
+    return m, kernelMeans, kernelSigma, kernelWeights
 
-    err, rmse, rsq = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
+def predict(X, kernelMeans, kernelSigma, kernelWeights):
+    # vector prediction
+    if(isinstance(X[0], list)):
+        n = len(X)
+        Yest = []
+        for i in range(n):
+            Yest.append(ft.output(X[i], kernelMeans, kernelSigma, kernelWeights))
+        Yest = np.array(Yest)
+        return Yest
+    # scalar prediction
+    else:
+        return ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+
+def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, original_P, target_P):
+    """model test"""
+    print("== EVALUATE ==")
+    f = open('./result.txt', 'w')
+
+    # recursive application
+    assert(target_P % original_P == 0) # check if target P can be achieved using n step applications of interval original_P
+    loop = target_P - original_P
+    print("Iterative Application for {} times".format(loop))
+
+    Y_hat = []
+    for idx, x_element in enumerate(teX):
+        data_copy = copy.deepcopy(data)
+        data_at = index_arr[idx]
+        x = x_element
+        for i in range(0, loop):
+            y_h = predict(x, kernelMeans, kernelSigma, kernelWeights)
+            # update value by prediction
+            data_copy[data_at] = y_h
+            x, data_at = ft.extracting_on_index(tau, E, original_P, data_copy, data_at)
+        Y_hat.append(y_h)
+
+    err, rmse, rsq = ft.loss_with_prediction_array(teY, Y_hat)
     print(format('rmse: %f, R2: %f') % (rmse, rsq))
     f.write(format('rmse: %f, R2: %f') % (rmse, rsq) + '\n')
 
@@ -156,9 +182,8 @@ def GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     plt.plot(teY, 'r')
     plt.plot(pre, 'b')
     plt.legend(["Test Data", "Prediction"])
-    plt.savefig("./kernel" + str(m) + "_prediction_graph.png")
+    plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
     plt.show()
 
-    log.close()
     f.close()
     return rmse, rsq
