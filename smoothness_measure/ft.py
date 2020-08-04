@@ -73,24 +73,6 @@ def extracting_on_index(tau, E, P, obj, index):
         input.insert(0, obj[idx]) # FIFO push
         idx -= tau
     return input, index+P
-'''
-def extracting_on_index(tau, E, P, obj, index_arr):
-    input = []
-    output = []
-    index = []
-
-    for i in range(len(index_arr)):
-        b = []
-        idx = index_arr[i]
-        index.append(idx + P)
-        for j in range(E):
-            b.insert(0, obj[idx]) # FIFO push
-            idx -= tau
-        input.append(b)
-        output.append(obj[idx + P])
-
-    return np.array(input), np.array(output), np.array(index)
-'''
 
 def GaussianKernel(x, mu, sig):
     diff = x - mu
@@ -177,7 +159,6 @@ def EstimatedNoiseVariance(X):
 
 def Phase1(x, y, e, m, alpha, kernelMeans, kernelSigma, kernelWeights, invPSI):
     m += 1
-
     mdist = []
 
     for i in range(m - 1):

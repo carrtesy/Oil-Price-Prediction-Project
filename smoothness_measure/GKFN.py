@@ -159,7 +159,7 @@ def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, k
 
     # recursive application
     assert(target_P % original_P == 0) # check if target P can be achieved using n step applications of interval original_P
-    loop = target_P - original_P
+    loop = target_P - original_P + 1
     print("Iterative Application for {} times".format(loop))
 
     Y_hat = []
