@@ -97,6 +97,13 @@ def rMSE(y, yhat):
         
     return np.sqrt(a/len(y))
 
+def MAE(y, yhat):
+    a = 0
+    for i in range(len(y)):
+        a = a + np.abs(y[i]-yhat[i])
+
+    return a / len(y)
+
 def R2(y, yhat):
     ymean = np.mean(y)
     a = 0
@@ -126,15 +133,17 @@ def loss(X, Y, kernelMeans, kernelSigma, kernelWeights):
     err = Y - Yest
     rmse = rMSE(Y, Yest)
     rsq = R2(Y, Yest)
-    
-    return err, rmse, rsq
+    mae = MAE(Y, Yest)
+
+    return err, rmse, rsq, mae
 
 def loss_with_prediction_array(Y, Y_hat):
     err = Y - Y_hat
     rmse = rMSE(Y, Y_hat)
     rsq = R2(Y, Y_hat)
+    mae = MAE(Y, Y_hat)
     
-    return err, rmse, rsq
+    return err, rmse, rsq, mae
     
 def EstimatedNoiseVariance(X):
     n = len(X)
@@ -330,8 +339,3 @@ def minDistPredict(teX, MeanMatrix, SigmaMatrix, WeightMatrix):
     temp = np.array(temp)
     
     return temp
-
-
-    
-    
-    

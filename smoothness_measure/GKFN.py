@@ -174,9 +174,9 @@ def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, k
             x, data_at = ft.extracting_on_index(tau, E, original_P, data_copy, data_at)
         Y_hat.append(y_h)
 
-    err, rmse, rsq = ft.loss_with_prediction_array(teY, Y_hat)
-    print(format('rmse: %f, R2: %f') % (rmse, rsq))
-    f.write(format('rmse: %f, R2: %f') % (rmse, rsq) + '\n')
+    err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Y_hat)
+    print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
+    f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
 
     pre = teY - err
     plt.plot(teY, 'r')
@@ -186,4 +186,4 @@ def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, k
     plt.show()
 
     f.close()
-    return rmse, rsq
+    return rmse, rsq, mae

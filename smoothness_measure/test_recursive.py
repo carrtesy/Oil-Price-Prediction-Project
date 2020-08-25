@@ -88,4 +88,4 @@ teX = dataX[-test_size-gap:-gap]
 teY = dataY[-test_size:]
 te_index = index[-test_size-gap:-gap]
 
-rmse, rsq = GKFN.evaluate(data, teX, teY, te_index, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, P, target_P)
+rmse, rsq, mae = GKFN.evaluate(data, teX, teY, te_index, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, P, target_P)
