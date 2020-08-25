@@ -20,14 +20,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4018da09-68cf-4dc5-bd32-9f550d8c147e" name="Default Changelist" comment="added MAE metric">
+      <change afterPath="$PROJECT_DIR$/models/ARIMA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Oil-Price-Prediction-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Oil-Price-Prediction-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/GKFN.py" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/GKFN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/ft.py" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/ft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/kernel30_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/kernel30_prediction_graph.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/result.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothness_measure/test_recursive.py" beforeDir="false" afterPath="$PROJECT_DIR$/smoothness_measure/test_recursive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/GKFN.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/GKFN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/models/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/daily/kernel45_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/daily/kernel45_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/daily/kernel45_test_rmse.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/daily/kernel45_test_rmse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/daily/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/daily/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/daily/tau5_E3_error_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/daily/tau5_E3_error_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/daily/wti.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/daily/wti.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/ft.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/kernel30_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/kernel30_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/model_weekly_tau1_E6_tau_1.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_weekly_tau1_E6_tau_1.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data/kernel28_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_monthly_data/kernel28_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_monthly_data/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_monthly_data/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_monthly_data/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_monthly_data/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_monthly_data/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/kernel8_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/kernel8_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/kernel10_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/kernel10_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/kernel20_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/kernel20_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel20/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/kernel28_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/kernel28_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel28/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/kernel52_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/kernel52_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/kernel52/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/kernel42_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/kernel42_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel42/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/kernel73_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/kernel73_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data/P not fixed(P = 1 for sm)/tau1kernel73/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/3steps/kernel30_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data_recursive/3steps/kernel30_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/3steps/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data_recursive/3steps/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/3steps/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data_recursive/3steps/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/3steps/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data_recursive/3steps/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/4steps/kernel30_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data_recursive/4steps/kernel30_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/4steps/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/from_weekly_data_recursive/4steps/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/monthly/wti_month.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly/wti_month.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/sm.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/test_recursive.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/test_recursive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel30/kernel30_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel30/kernel30_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel30/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel30/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel30/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel30/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel30/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel30/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel30/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel30/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel45/kernel45_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel45/kernel45_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel45/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel45/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel45/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel45/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel45/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel45/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau1_E6_kernel45/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau1_E6_kernel45/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau4_E5/kernel28_prediction_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau4_E5/kernel28_prediction_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau4_E5/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau4_E5/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau4_E5/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau4_E5/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau4_E5/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau4_E5/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/tau4_E5/sm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/tau4_E5/sm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/wti_week.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/wti_week.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothness_measure/wti(2000~).csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/wti(2000~).csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +134,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/smoothness_measure/daily_ARIMA" />
+      <recent name="$PROJECT_DIR$/smoothness_measure" />
       <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/4steps" />
       <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive/3steps" />
       <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data_recursive" />
-      <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8" />
-      <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E5tau1Kernel10" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data/P fixed(P = 4 for sm)/E4tau18Kernel8" />
@@ -76,7 +146,28 @@
       <recent name="C:\Users\ysshyn\Desktop\oil prediction\Oil-Price-Prediction-Project\smoothness_measure" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_recursive">
+  <component name="RunManager" selected="Python.ARIMA">
+    <configuration name="ARIMA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Oil-Price-Prediction-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smoothness_measure/ARIMA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="GKFN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Oil-Price-Prediction-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,27 +181,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smoothness_measure/GKFN.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ft_monthly" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Oil-Price-Prediction-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/smoothness_measure" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smoothness_measure/ft_monthly.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,18 +254,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.GKFN" />
-      <item itemvalue="Python.ft_monthly" />
       <item itemvalue="Python.sm" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test_recursive" />
+      <item itemvalue="Python.ARIMA" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ARIMA" />
         <item itemvalue="Python.test_recursive" />
         <item itemvalue="Python.GKFN" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.sm" />
-        <item itemvalue="Python.ft_monthly" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +281,14 @@
       <option name="presentableId" value="Default" />
       <updated>1590932685071</updated>
     </task>
+    <task id="LOCAL-00001" summary="added MAE metric">
+      <created>1598348623974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598348623974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,16 +303,20 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added MAE metric" />
+    <option name="LAST_COMMIT_MESSAGE" value="added MAE metric" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="660" y="111" width="657" height="883" key="#GKFN" timestamp="1595644994520">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="660" y="111" width="657" height="883" key="#GKFN/67.27.1853.1053@67.27.1853.1053" timestamp="1595644994520" />
-    <state x="467" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595649807677">
+    <state x="467" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598350226752">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594778353640" />
-    <state x="467" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595649807677" />
+    <state x="467" y="204" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598350226752" />
     <state x="726" y="299" width="524" height="507" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595650326555">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -262,67 +344,67 @@
     <state x="2739" y="333" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594104339624" />
     <state x="857" y="352" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595645447888" />
     <state x="2739" y="333" key="FileChooserDialogImpl/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595486583603" />
-    <state width="1826" height="413" key="GridCell.Tab.0.bottom" timestamp="1596681531505">
+    <state width="1826" height="273" key="GridCell.Tab.0.bottom" timestamp="1598360122758">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
     <state width="1826" height="413" key="GridCell.Tab.0.bottom/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
-    <state width="1826" height="401" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1596409513659" />
+    <state width="1826" height="273" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122758" />
     <state width="1893" height="413" key="GridCell.Tab.0.bottom/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1826" height="413" key="GridCell.Tab.0.center" timestamp="1596681531505">
+    <state width="1826" height="273" key="GridCell.Tab.0.center" timestamp="1598360122758">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
     <state width="1826" height="413" key="GridCell.Tab.0.center/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
-    <state width="1826" height="401" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1596409513658" />
+    <state width="1826" height="273" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122758" />
     <state width="1893" height="413" key="GridCell.Tab.0.center/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1826" height="413" key="GridCell.Tab.0.left" timestamp="1596681531505">
+    <state width="1826" height="273" key="GridCell.Tab.0.left" timestamp="1598360122757">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
     <state width="1826" height="413" key="GridCell.Tab.0.left/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
-    <state width="1826" height="401" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1596409513658" />
+    <state width="1826" height="273" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122757" />
     <state width="1893" height="413" key="GridCell.Tab.0.left/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1826" height="413" key="GridCell.Tab.0.right" timestamp="1596681531505">
+    <state width="1826" height="273" key="GridCell.Tab.0.right" timestamp="1598360122758">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
     <state width="1826" height="413" key="GridCell.Tab.0.right/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
-    <state width="1826" height="401" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1596409513659" />
+    <state width="1826" height="273" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122758" />
     <state width="1893" height="413" key="GridCell.Tab.0.right/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1893" height="349" key="GridCell.Tab.1.bottom" timestamp="1596681531493">
+    <state width="1826" height="338" key="GridCell.Tab.1.bottom" timestamp="1598349835616">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1893" height="349" key="GridCell.Tab.1.bottom/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531493" />
-    <state width="1826" height="339" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1596366895327" />
+    <state width="1826" height="338" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1598349835616" />
     <state width="1893" height="349" key="GridCell.Tab.1.bottom/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596510290217" />
-    <state width="1893" height="349" key="GridCell.Tab.1.center" timestamp="1596681531493">
+    <state width="1826" height="338" key="GridCell.Tab.1.center" timestamp="1598349835616">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1893" height="349" key="GridCell.Tab.1.center/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531493" />
-    <state width="1826" height="339" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1596366895326" />
+    <state width="1826" height="338" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1598349835616" />
     <state width="1893" height="349" key="GridCell.Tab.1.center/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596510290217" />
-    <state width="1893" height="349" key="GridCell.Tab.1.left" timestamp="1596681531493">
+    <state width="1826" height="338" key="GridCell.Tab.1.left" timestamp="1598349835616">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1893" height="349" key="GridCell.Tab.1.left/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531493" />
-    <state width="1826" height="339" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1596366895326" />
+    <state width="1826" height="338" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1598349835616" />
     <state width="1893" height="349" key="GridCell.Tab.1.left/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596510290217" />
-    <state width="1893" height="349" key="GridCell.Tab.1.right" timestamp="1596681531493">
+    <state width="1826" height="338" key="GridCell.Tab.1.right" timestamp="1598349835616">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1893" height="349" key="GridCell.Tab.1.right/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531493" />
-    <state width="1826" height="339" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1596366895326" />
+    <state width="1826" height="338" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1598349835616" />
     <state width="1893" height="349" key="GridCell.Tab.1.right/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596510290217" />
     <state x="532" y="213" key="SettingsEditor" timestamp="1595645236817">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="184" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594778271793" />
     <state x="532" y="213" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1595645236817" />
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1598348508137">
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1598348633539">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1598348508137" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1598348633539" />
     <state x="779" y="462" width="428" height="180" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598348346996">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -331,5 +413,21 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="718" y="433" width="540" height="239" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595645286233" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/models/test_recursive.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/models/ARIMA.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

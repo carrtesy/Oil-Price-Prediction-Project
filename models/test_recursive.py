@@ -4,7 +4,8 @@ import pickle
 
 '''
 Here we apply
-weekly_tau1(best result for weekly analysis)
+weekly_tau1(best resultweekly_tau1(best result for weekly analysis)
+ for weekly analysis)
 recursively.
 '''
 
