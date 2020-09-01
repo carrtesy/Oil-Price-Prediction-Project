@@ -146,7 +146,28 @@
       <recent name="C:\Users\ysshyn\Desktop\oil prediction\Oil-Price-Prediction-Project\smoothness_measure" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ARIMA">
+  <component name="RunManager" selected="Python.ARIMA (1)">
+    <configuration name="ARIMA (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Oil-Price-Prediction-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/ARIMA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ARIMA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Oil-Price-Prediction-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -181,27 +202,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smoothness_measure/GKFN.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sm" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Oil-Price-Prediction-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/smoothness_measure" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smoothness_measure/sm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -254,22 +254,22 @@
     </configuration>
     <list>
       <item itemvalue="Python.GKFN" />
-      <item itemvalue="Python.sm" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test_recursive" />
       <item itemvalue="Python.ARIMA" />
+      <item itemvalue="Python.ARIMA (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ARIMA (1)" />
         <item itemvalue="Python.ARIMA" />
         <item itemvalue="Python.test_recursive" />
         <item itemvalue="Python.GKFN" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.sm" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -344,31 +344,35 @@
     <state x="2739" y="333" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594104339624" />
     <state x="857" y="352" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595645447888" />
     <state x="2739" y="333" key="FileChooserDialogImpl/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595486583603" />
-    <state width="1826" height="273" key="GridCell.Tab.0.bottom" timestamp="1598360122758">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state width="1899" height="281" key="GridCell.Tab.0.bottom" timestamp="1598950782402">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
+    <state width="1899" height="281" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1598950782402" />
     <state width="1826" height="413" key="GridCell.Tab.0.bottom/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
     <state width="1826" height="273" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122758" />
     <state width="1893" height="413" key="GridCell.Tab.0.bottom/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1826" height="273" key="GridCell.Tab.0.center" timestamp="1598360122758">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state width="1899" height="281" key="GridCell.Tab.0.center" timestamp="1598950782401">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
+    <state width="1899" height="281" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1598950782401" />
     <state width="1826" height="413" key="GridCell.Tab.0.center/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
     <state width="1826" height="273" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122758" />
     <state width="1893" height="413" key="GridCell.Tab.0.center/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1826" height="273" key="GridCell.Tab.0.left" timestamp="1598360122757">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state width="1899" height="281" key="GridCell.Tab.0.left" timestamp="1598950782401">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
+    <state width="1899" height="281" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1598950782401" />
     <state width="1826" height="413" key="GridCell.Tab.0.left/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
     <state width="1826" height="273" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122757" />
     <state width="1893" height="413" key="GridCell.Tab.0.left/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
-    <state width="1826" height="273" key="GridCell.Tab.0.right" timestamp="1598360122758">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state width="1899" height="281" key="GridCell.Tab.0.right" timestamp="1598950782401">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1362" height="266" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594779457457" />
+    <state width="1899" height="281" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1598950782401" />
     <state width="1826" height="413" key="GridCell.Tab.0.right/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531505" />
     <state width="1826" height="273" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1598360122758" />
     <state width="1893" height="413" key="GridCell.Tab.0.right/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596511135576" />
@@ -396,10 +400,11 @@
     <state width="1893" height="349" key="GridCell.Tab.1.right/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1596681531493" />
     <state width="1826" height="338" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1598349835616" />
     <state width="1893" height="349" key="GridCell.Tab.1.right/67.47.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596510290217" />
-    <state x="532" y="213" key="SettingsEditor" timestamp="1595645236817">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="2481" y="291" key="SettingsEditor" timestamp="1598947355664">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="482" y="184" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594778271793" />
+    <state x="2481" y="291" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1598947355664" />
     <state x="532" y="213" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1595645236817" />
     <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1598348633539">
       <screen x="67" y="27" width="1853" height="1053" />

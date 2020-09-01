@@ -1,5 +1,5 @@
 import ft
-from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.arima_model import ARIMA, ARIMAResults
 from matplotlib import pyplot as plt
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import warnings
@@ -29,7 +29,7 @@ elif(mode == "monthly"): # Monthly
 
 # hyperparmeters
 test_ratio = 0.3
-ARIMA_order = (5, 1, 0)
+ARIMA_order = (1, 0, 0)
 
 # train / test split
 test_size = int(len(data) * test_ratio)
@@ -40,8 +40,28 @@ train, test = data[:-test_size], data[-test_size:]
 
 # evaluate models
 history = [x for x in train]
+
 predictions = list()
 
+def predict(ar_coef, history):
+    yhat=0.0
+    for i in range(1, len(ar_coef)+1):
+        yhat += ar_coef[i-1]*history[-i]
+    return yhat
+
+'''model = ARIMA(history, order = ARIMA_order)
+model_fit = model.fit(disp=0)
+print(model_fit.aic)
+ar_coef=model_fit.arparams
+y_hat = predict(ar_coef, history)
+print(y_hat)
+output = model_fit.forecast()
+print(output)
+yhat = output[0][0]
+print(yhat)
+print(model_fit.summary())
+print(apply())
+'''
 print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
