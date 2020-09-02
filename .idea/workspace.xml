@@ -99,6 +99,7 @@
       <change beforePath="$PROJECT_DIR$/smoothness_measure/weekly/wti_week.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/weekly/wti_week.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smoothness_measure/wti(2000~).csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/wti(2000~).csv" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,6 +146,18 @@
       <recent name="$PROJECT_DIR$/smoothness_measure/monthly/from_weekly_data" />
       <recent name="C:\Users\ysshyn\Desktop\oil prediction\Oil-Price-Prediction-Project\smoothness_measure" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Python.ARIMA (1)">
     <configuration name="ARIMA (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -296,12 +309,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added MAE metric" />

@@ -29,7 +29,7 @@ elif(mode == "monthly"): # Monthly
 
 # hyperparmeters
 test_ratio = 0.3
-ARIMA_order = (1, 0, 0)
+##ARIMA_order = (2, 0, 0)
 
 # train / test split
 test_size = int(len(data) * test_ratio)
@@ -43,25 +43,7 @@ history = [x for x in train]
 
 predictions = list()
 
-def predict(ar_coef, history):
-    yhat=0.0
-    for i in range(1, len(ar_coef)+1):
-        yhat += ar_coef[i-1]*history[-i]
-    return yhat
 
-'''model = ARIMA(history, order = ARIMA_order)
-model_fit = model.fit(disp=0)
-print(model_fit.aic)
-ar_coef=model_fit.arparams
-y_hat = predict(ar_coef, history)
-print(y_hat)
-output = model_fit.forecast()
-print(output)
-yhat = output[0][0]
-print(yhat)
-print(model_fit.summary())
-print(apply())
-'''
 print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
@@ -84,7 +66,7 @@ for t in range(len(test)):
 print("=== EVALUATE ===")
 rmse = mean_squared_error(test, predictions, squared = True)
 rsq = r2_score(test, predictions)
-mae = mean_squared_error(test, predictions)
+mae = mean_absolute_error(test, predictions)
 
 print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
 
@@ -111,4 +93,3 @@ plt.show()
 log = open(filename + "_result" + '.txt', 'w')
 log.write(text)
 log.close()
-
