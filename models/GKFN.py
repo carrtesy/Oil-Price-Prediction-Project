@@ -53,10 +53,11 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     trainerr = []
     validerr = []
 
+
     # 커널 수를 늘려가며 학습을 합니다.
     while(True):
-        err, rmse, rsq = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
-        terr, trmse, trsq = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
+        err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
+        terr, trmse, trsq, trmae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
         log.write(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f\n') % (m, rmse, rsq, m, trmse, trsq))
         print(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f\n') % (m, rmse, rsq, m, trmse, trsq))
         trainerr.append(rmse)
@@ -93,12 +94,13 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     # 커널 몇개를 할것인가?
     #m = 45 # daily
     #m = 28 # weekly
-    m= 30 #weekly_tau1
+    #m= 30 #weekly_tau1
     #m = 73 #monthly_from_weekly_using_tau1
     #m = 8  # monthly_from_weekly fixed p =4
     #m = 10 #monthly_from_weekly_using_tau1 fixed p =4
     #m = 35  # monthly from monthly data
     #m = 28 # monthly from weekly data
+    m = 19 # weekly_data+, monthly_data+
 
     kernelMeans = kernelMeans[:m]
     kernelSigma = kernelSigma[:m]
@@ -115,7 +117,7 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
             e = y - ft.output(x, kernelMeans, kernelSigma, kernelWeights)
 
             if i % 100 == 0 :
-                err, rmse, rsq = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
+                err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
                 log.write(format('Phase 2 step rmse = %f, rsq = %f\n') % (rmse, rsq))
                 print(format('Phase 2 step rmse = %f, rsq = %f') % (rmse, rsq))
 
@@ -130,7 +132,7 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
             e = y - ft.output(x, kernelMeans, kernelSigma, kernelWeights)
 
             if i % 100 == 0:
-                err, rmse, rsq = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
+                err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
                 log.write(format('Phase 3 step rmse = %f, rsq = %f\n') % (rmse, rsq))
                 print(format('Phase 3 step rmse = %f, rsq = %f') % (rmse, rsq))
 
@@ -152,7 +154,7 @@ def predict(X, kernelMeans, kernelSigma, kernelWeights):
     else:
         return ft.output(X, kernelMeans, kernelSigma, kernelWeights)
 
-def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, original_P, target_P):
+def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, original_P, target_P, mode):
     """model test"""
     print("== EVALUATE ==")
     f = open('./result.txt', 'w')
@@ -163,6 +165,7 @@ def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, k
     print("Iterative Application for {} times".format(loop))
 
     Y_hat = []
+    print(len(teX))
     for idx, x_element in enumerate(teX):
         data_copy = copy.deepcopy(data)
         data_at = index_arr[idx]
@@ -171,7 +174,7 @@ def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, k
             y_h = predict(x, kernelMeans, kernelSigma, kernelWeights)
             # update value by prediction
             data_copy[data_at] = y_h
-            x, data_at = ft.extracting_on_index(tau, E, original_P, data_copy, data_at)
+            x, data_at = ft.extracting_on_index(tau, E, original_P, data_copy, data_at, mode)
         Y_hat.append(y_h)
 
     err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Y_hat)

@@ -4,14 +4,15 @@ from matplotlib import pyplot as plt
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import warnings
 import pandas as pd
+import ft
 
 
 # ignore warnings
 warnings.filterwarnings("ignore")
 
 mode = "daily"
-#mode = "weekly"
-#mode = "monthly"
+#mode = "weekly_data+"
+#mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
 #weeklyfile = open('./weekly/wti_week.csv', 'r')
@@ -29,7 +30,7 @@ elif(mode == "monthly"): # Monthly
 
 # hyperparmeters
 test_ratio = 0.3
-##ARIMA_order = (2, 0, 0)
+ARIMA_order = (3, 1, 0)
 
 # train / test split
 test_size = int(len(data) * test_ratio)
@@ -47,7 +48,7 @@ predictions = list()
 print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
-    model_fit = model.fit(disp = 0)
+    model_fit = model.fit(disp = 0, trend='nc')
     output = model_fit.forecast()
     yhat = output[0][0]
     predictions.append(yhat)
@@ -64,9 +65,9 @@ for t in range(len(test)):
 
 
 print("=== EVALUATE ===")
-rmse = mean_squared_error(test, predictions, squared = True)
-rsq = r2_score(test, predictions)
-mae = mean_absolute_error(test, predictions)
+rmse = ft.rMSE(test, predictions)
+rsq = ft.R2(test, predictions)
+mae = ft.MAE(test, predictions)
 
 print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
 

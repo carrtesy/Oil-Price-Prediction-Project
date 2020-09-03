@@ -2,10 +2,12 @@ import GKFN
 import ft
 
 #mode = "daily"
-mode = "weekly_origin"
+#mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_tau1_for_monthly"
 #mode = "monthly"
+#mode = "weekly_data+"
+#mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
 weeklyfile = open('./weekly/wti_week.csv', 'r')
@@ -36,10 +38,19 @@ elif(mode == "monthly"): # Monthly
     data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
     E = 4
     tau = 2
+elif(mode == "weekly_data+"): # weekly_data+
+    print("===WEEKLY DATASET===")
+    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    E = 6
+    tau = 1
+elif(mode == "monthly_data+"): # weekly_data+
+    print("===MONTHLY DATASET===")
+    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    E = 10
+    tau = 1
 
-
-P = 4 # P days/weeks/months after
-dataX, dataY = ft.extracting(tau, E, P, data)
+P = 1 # P days/weeks/months after
+dataX, dataY = ft.extracting(tau, E, P, data,mode)
 test_ratio = 0.3
 test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))

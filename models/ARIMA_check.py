@@ -43,14 +43,46 @@ history = [x for x in train]
 
 predictions = list()
 
+# no constant ARIMA order check
+'''
 for d in range(2):
-    for i in range(7):
+    for i in range(1,8):
         for j in range(4):
-            ARIMA_order = (i,d,j)
-            model = ARIMA(history, order = ARIMA_order)
-            model_fit = model.fit(disp = 0,trend='nc')
-            print(model_fit.summary())
-            print(model_fit.aic)
+            try :
+                ARIMA_order = (i,d,j)
+                model = ARIMA(history, order = ARIMA_order)
+                model_fit = model.fit(disp = 0, trend='nc')
+                print(model_fit.summary())
+                print(model_fit.aic)
+            except:
+                pass
+# (1,0,0) (2,0,0) (1,1,0) (2,1,0) (2,1,2), (3,1,0), 
+'''
+# check AIC
+'''
+model = ARIMA(history, order=(1,0,0))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #13011
+model = ARIMA(history, order=(2,0,0))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #13007
+model = ARIMA(history, order=(1,1,0))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #12994
+model = ARIMA(history, order=(2,1,0))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #12991
+model = ARIMA(history, order=(2,1,2))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #12983
+model = ARIMA(history, order=(3,1,0))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #12989
+
+#(2,1,2)>(3,1,0)>(2,1,0)
+'''
+
+# constant ARIMA order check
 '''
 for d in range(2):
     for i in range(7):
@@ -61,4 +93,32 @@ for d in range(2):
             print(model_fit.summary())
             print(model_fit.aic)
 # (1,0,0), (1,0,1), (1,0,2), (2,0,0), (2,0,1), (4,0,1) *(5,0,1)
+'''
+
+
+#check AIC
+'''
+model = ARIMA(history, order=(1,0,0))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #13010
+model = ARIMA(history, order=(1,0,1))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #13006
+model = ARIMA(history, order=(1,0,2))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #13005
+model = ARIMA(history, order=(2,0,0))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #13006
+model = ARIMA(history, order=(2,0,1))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #13007
+model = ARIMA(history, order=(4,0,1))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #13002
+model = ARIMA(history, order=(5,0,1))
+model_fit = model.fit(disp=0, trend='c')
+print(model_fit.aic) #12995
+
+#(5,0,1)
 '''

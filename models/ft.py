@@ -32,16 +32,26 @@ def readData(inputfile, startdate, enddate):
     f.close()
     return data
 
-def smoothnessMeasure(data) :
+def smoothnessMeasure(data, mode) :
     # Smoothness Measure
-    #P = 1 # normal
-    P = 4 # for weekly -> monthly
+    P = 1 # normal
+    #P = 4 # for weekly -> monthly
     SM_list = []
     f = open('sm.txt', 'w')
     for E in range(2, 11):
+        temp=[]
+        a1, a2, _ = extracting(1, E, P, data, mode)
+        sm = SM(a1, a2, E)
+        temp.append(1)
+        temp.append(E)
+        temp.append(sm)
+        print(format("E: %f, tau: 1 sm: %f")%(E, sm))
+        f.write(format("E: %f, tau: 1 sm: %f") % (E, sm) + '\n')
+        SM_list.append(temp)
+        '''
         for tau in range(1, 21):
             temp = []
-            a1, a2 = extracting(tau, E, P, data)
+            a1, a2, _ = extracting(tau, E, P, data, mode)
             sm = SM(a1, a2, E)
             temp.append(tau)
             temp.append(E)
@@ -49,30 +59,63 @@ def smoothnessMeasure(data) :
             print(format("E: %f, tau: %f sm: %f") % (E, tau, sm))
             f.write(format("E: %f, tau: %f sm: %f") % (E, tau, sm) + '\n')
             SM_list.append(temp)
+            '''
     f.close()
 
 
-def extracting(tau, E, P, obj):
+def extracting(tau, E, P, obj, mode):
+    '''if the mode is weekly_data+ or monthly_data+, we use the daily data, extracting by 5 days or 20 days in sequence'''
+
     input = []
     output = []
     index = []
-    a = tau * (E-1)
-    for i in range(a, len(obj)-P):
-        b=[]
-        for j in range(i-a, i+tau, tau):
-            b.append(obj[j])
-        input.append(b)
-        output.append(obj[i+P])
-        index.append(i+P)
+
+    if mode == "weekly_data+":
+        a = tau * (E-1)*5
+        for i in range(a, len(obj)-5*P):
+            b=[]
+            for j in range(i-a, i+5*tau, 5*tau):
+                b.append(obj[j])
+            input.append(b)
+            output.append(obj[i+5*P])
+            index.append(i+5*P)
+    elif mode == "monthly_data+":
+        a = tau * (E-1)*20
+        for i in range(a, len(obj)-20*P):
+            b=[]
+            for j in range(i-a, i+20*tau, 20*tau):
+                b.append(obj[j])
+            input.append(b)
+            output.append(obj[i+20*P])
+            index.append(i+20*P)
+    else:
+        a = tau * (E-1)
+        for i in range(a, len(obj)-P):
+            b=[]
+            for j in range(i-a, i+tau, tau):
+                b.append(obj[j])
+            input.append(b)
+            output.append(obj[i+P])
+            index.append(i+P)
+
     return np.array(input), np.array(output), np.array(index)
 
-def extracting_on_index(tau, E, P, obj, index):
+def extracting_on_index(tau, E, P, obj, index, mode):
     input = []
     idx = index
     for j in range(E):
         input.insert(0, obj[idx]) # FIFO push
-        idx -= tau
-    return input, index+P
+        if mode == "weekly_data+":
+            idx -= tau*5
+            P_ = 5*P
+        elif mode== "monthly_data+":
+            idx -= tau*20
+            P_ = 20*P
+        else:
+            idx -= tau
+            P_ = P
+
+    return input, index+P_
 
 def GaussianKernel(x, mu, sig):
     diff = x - mu
