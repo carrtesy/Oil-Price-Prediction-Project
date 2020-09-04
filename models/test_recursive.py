@@ -15,10 +15,10 @@ add weekly_data+, monthly_data+ using daily data
 #mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
-#mode = "weekly_tau1_for_monthly"
+mode = "weekly_tau1_for_monthly"
 #mode = "monthly"
 #mode = "weekly_data+"
-mode = "monthly_data+"
+#mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
 weeklyfile = open('./weekly/wti_week.csv', 'r')
@@ -39,11 +39,11 @@ elif(mode == "weekly_tau1"): # Weekly_tau1
     data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
     E = 6
     tau = 1
-elif(mode == "weekly_tau1_for_monthly"): # Weekly_tau1
+elif(mode == "weekly_tau1_for_monthly"): # Weekly_tau1 P=4
     print("===WEEKLY DATASET===")
     data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
-    E = 10
-    tau = 1
+    E = 18
+    tau = 4
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
     data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
@@ -54,14 +54,14 @@ elif(mode == "weekly_data+"): # weekly_data+
     data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
     E = 5
     tau = 1
-elif(mode == "monthly_data+"): # weekly_data+
+elif(mode == "monthly_data+"): # monthly_data+
     print("===MONTHLY DATASET===")
     data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
     E = 4
     tau = 1
 
-P = 1 # P days/weeks/months after
-target_P = 1 # recursive expectation using interval P
+P = 4 # P days/weeks/months after
+target_P = 4 # recursive expectation using interval P
 gap = target_P - P
 
 dataX, dataY, index = ft.extracting(tau, E, P, data, mode)
@@ -75,14 +75,20 @@ trX = dataX[:-test_size]
 trY = dataY[:-test_size]
 
 # Test
+
 teX = dataX[-test_size:]
 teY = dataY[-test_size:]
 te_index = index[-test_size:]
+'''
+teX = dataX[-test_size-gap:-gap]
+teY = dataY[-test_size:]
+te_index = index[-test_size-gap:-gap]
+'''
 
 # parameter
 alpha = 0.5
 loop = 5
-Kernel_Num = 60
+Kernel_Num = 100
 
 
 # train or load model
@@ -101,9 +107,4 @@ else:
         num_kernels, kernelMeans, kernelSigma, kernelWeights = pickle.load(f)
 
 # evaluate model
-'''
-teX = dataX[-test_size-gap:-gap]
-teY = dataY[-test_size:]
-te_index = index[-test_size-gap:-gap]
-'''
 rmse, rsq, mae = GKFN.evaluate(data, teX, teY, te_index, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, P, target_P, mode)

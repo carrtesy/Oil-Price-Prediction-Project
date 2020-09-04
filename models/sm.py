@@ -1,16 +1,16 @@
 import ft
 
 #mode = "daily"
-#mode = "weekly"
+mode = "weekly"
 #mode = "monthly"
 #mode = "weekly_data+"
-mode = "monthly_data+"
+#mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
 weeklyfile = open('./weekly/wti_week.csv', 'r')
 monthlyfile = open('./monthly/wti_month.csv', 'r')
 
-if(mode == "daily"): # Daily
+if (mode == "daily"): # Daily
     print("===DAILY DATASET===")
     data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
 elif(mode == "weekly"): # Weekly

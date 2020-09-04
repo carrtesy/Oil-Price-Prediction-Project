@@ -34,32 +34,33 @@ def readData(inputfile, startdate, enddate):
 
 def smoothnessMeasure(data, mode) :
     # Smoothness Measure
-    P = 1 # normal
-    #P = 4 # for weekly -> monthly
+    #P = 1 # normal
+    P = 4 # for weekly -> monthly
     SM_list = []
     f = open('sm.txt', 'w')
-    for E in range(2, 11):
-        temp=[]
-        a1, a2, _ = extracting(1, E, P, data, mode)
-        sm = SM(a1, a2, E)
-        temp.append(1)
-        temp.append(E)
-        temp.append(sm)
-        print(format("E: %f, tau: 1 sm: %f")%(E, sm))
-        f.write(format("E: %f, tau: 1 sm: %f") % (E, sm) + '\n')
-        SM_list.append(temp)
-        '''
-        for tau in range(1, 21):
-            temp = []
-            a1, a2, _ = extracting(tau, E, P, data, mode)
+    if (mode =="daily"):
+        for tau in range(1, 10):
+            for E in range(2, 15):
+                temp = []
+                a1, a2, _ = extracting(tau, E, P, data, mode)
+                sm = SM(a1, a2, E)
+                temp.append(tau)
+                temp.append(E)
+                temp.append(sm)
+                print(format("E: %f, tau: %f sm: %f") % (E, tau, sm))
+                f.write(format("E: %f, tau: %f sm: %f") % (E, tau, sm) + '\n')
+                SM_list.append(temp)
+    else:
+        for E in range(2, 15):
+            temp=[]
+            a1, a2, _ = extracting(1, E, P, data, mode)
             sm = SM(a1, a2, E)
-            temp.append(tau)
+            temp.append(1)
             temp.append(E)
             temp.append(sm)
-            print(format("E: %f, tau: %f sm: %f") % (E, tau, sm))
-            f.write(format("E: %f, tau: %f sm: %f") % (E, tau, sm) + '\n')
+            print(format("E: %f, tau: 1 sm: %f")%(E, sm))
+            f.write(format("E: %f, tau: 1 sm: %f") % (E, sm) + '\n')
             SM_list.append(temp)
-            '''
     f.close()
 
 
