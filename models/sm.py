@@ -1,9 +1,9 @@
 import ft
 
 #mode = "daily"
-mode = "weekly"
+#mode = "weekly"
 #mode = "monthly"
-#mode = "weekly_data+"
+mode = "weekly_data+"
 #mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')

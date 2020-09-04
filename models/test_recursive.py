@@ -52,12 +52,12 @@ elif(mode == "monthly"): # Monthly
 elif(mode == "weekly_data+"): # weekly_data+
     print("===WEEKLY DATASET===")
     data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
-    E = 5
+    E = 6
     tau = 1
 elif(mode == "monthly_data+"): # monthly_data+
     print("===MONTHLY DATASET===")
     data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
-    E = 4
+    E = 5
     tau = 1
 
 P = 4 # P days/weeks/months after
@@ -84,7 +84,6 @@ teX = dataX[-test_size-gap:-gap]
 teY = dataY[-test_size:]
 te_index = index[-test_size-gap:-gap]
 '''
-
 # parameter
 alpha = 0.5
 loop = 5
