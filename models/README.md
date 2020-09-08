@@ -9,9 +9,12 @@
 |---|:---:|:---:|:---:|:---:|:---:|:---:|---:|
 | Daily | | | | | | | |
 | Weekly | | | | | | | |
+| Weekly(tau=1) | | | | | | | |
 | Monthly (from monthly data) | | | | | | | | 
-| Monthly (from weekly data, P = 4) | | | | | | | | 
+| Monthly (from weekly data, P = 4) | | | | | | | |
+| Monthly (from weekly data, P = 4, tau=1) | | | | | | | |
 | Monthly (from weekly data, recursive) | | | | | | | | 
+| Weekly (from daily data, augmentation) | | | | | | | |
 | Monthly (from daily data, augmentation) | | | | | | | |
 
 - ARIMA
