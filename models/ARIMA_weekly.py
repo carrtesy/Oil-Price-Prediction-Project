@@ -10,12 +10,12 @@ import ft
 # ignore warnings
 warnings.filterwarnings("ignore")
 
-mode = "daily"
-#mode = "weekly_data+"
+#mode = "daily"
+mode = "weekly"
 #mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
-#weeklyfile = open('./weekly/wti_week.csv', 'r')
+weeklyfile = open('./weekly/wti_week.csv', 'r')
 #monthlyfile = open('./monthly/wti_month.csv', 'r')
 
 if(mode == "daily"): # Daily
@@ -23,21 +23,23 @@ if(mode == "daily"): # Daily
     data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
 elif(mode == "weekly"): # Weekly_original
     print("===WEEKLY DATASET===")
-    #data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
     #data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
 
 # hyperparmeters
 test_ratio = 0.3
-ARIMA_order = (3, 1, 0)
+ARIMA_order = (4, 1, 3)
 
 # train / test split
 test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
 
-train, extra, test = data[:-test_size-5], data[-test_size-5:-5], data[-test_size:]
+#train, extra, test = data[:-test_size-5], data[-test_size-5:-5], data[-test_size:]
+train, test = data[:-test_size], data[-test_size:]
+
 
 # evaluate models
 history = [x for x in train]
@@ -49,10 +51,10 @@ print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
     model_fit = model.fit(disp = 0, trend='nc')
-    output = model_fit.forecast(steps=5)
-    yhat = output[0][4]
+    output = model_fit.forecast(steps=1)
+    yhat = output[0] #output[0][4]
     predictions.append(yhat)
-    obs = extra[t]
+    obs = test[t] #extra[t]
     history.append(obs)
 
     # Track the testing process
@@ -80,19 +82,25 @@ df["Value"] = pd.Series(test)
 
 print(df.head())
 
-filename = "ARIMA" + "_" + mode + "_" + str(ARIMA_order)
+filename = "ARIMA" + "_" + "weekly" + "_" + str(ARIMA_order)
 text = "rmse" + ":" + str(rmse) +  "\n" +\
             "rsq" + ":" + str(rsq) +  "\n" +\
             "mae" + ":" + str(mae) + "\n" +\
             "parameters :" + "\n"
 
+const = False #constant 유무
+if const:
+    st=1
+    text = text + "constant:" + str(params[st]) + \
+           " (" + str(pvalues[st]) + ")" + "\n"
+else: st =0
 for ar in range(1, ARIMA_order[0]+1):
-    text = text + "AR_" + str(ar) + ":" + str(params[ar-1]) +\
-           " (" + str(pvalues[ar-1])+ ")" + "\n"
+    text = text + "AR_" + str(ar) + ":" + str(params[st+ar-1]) +\
+           " (" + str(pvalues[st+ar-1])+ ")" + "\n"
 
 for ma in range(1, ARIMA_order[2]+1):
-    text = text + "MA_" + str(ma) + ":" + str(params[ARIMA_order[0]+ma-1]) +\
-           " (" + str(pvalues[ARIMA_order[0]+ma-1])+ ")" + "\n"
+    text = text + "MA_" + str(ma) + ":" + str(params[st+ARIMA_order[0]+ma-1]) +\
+           " (" + str(pvalues[st + ARIMA_order[0]+ma-1])+ ")" + "\n"
 
 df.to_csv(filename + ".csv", index=False)
 
