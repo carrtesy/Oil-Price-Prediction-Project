@@ -1,4 +1,4 @@
-import GKFN
+import GKFN_recursive
 import ft
 import pickle
 
@@ -95,7 +95,7 @@ ON_TRAIN = True
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters
-    num_kernels, kernelMeans, kernelSigma, kernelWeights = GKFN.train(trX, trY, teX, teY, alpha, loop, Kernel_Num)
+    num_kernels, kernelMeans, kernelSigma, kernelWeights = GKFN_recursive.train(trX, trY, teX, teY, alpha, loop, Kernel_Num)
     print("Saving model at file : {}".format(model_name))
     with open(model_name, 'wb') as f:
         pickle.dump([num_kernels, kernelMeans, kernelSigma, kernelWeights], f)
@@ -106,4 +106,4 @@ else:
         num_kernels, kernelMeans, kernelSigma, kernelWeights = pickle.load(f)
 
 # evaluate model
-rmse, rsq, mae = GKFN.evaluate(data, teX, teY, te_index, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, P, target_P, mode)
+rmse, rsq, mae = GKFN_recursive.evaluate(data, teX, teY, te_index, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, P, target_P, mode)
