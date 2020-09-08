@@ -37,7 +37,7 @@ test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
 
-train, test = data[:-test_size], data[-test_size:]
+train, extra, test = data[:-test_size-5], data[-test_size-5:-5], data[-test_size:]
 
 # evaluate models
 history = [x for x in train]
@@ -49,10 +49,10 @@ print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
     model_fit = model.fit(disp = 0, trend='nc')
-    output = model_fit.forecast()
-    yhat = output[0][0]
+    output = model_fit.forecast(steps=5)
+    yhat = output[0][4]
     predictions.append(yhat)
-    obs = test[t]
+    obs = extra[t]
     history.append(obs)
 
     # Track the testing process
@@ -65,6 +65,8 @@ for t in range(len(test)):
 
 
 print("=== EVALUATE ===")
+params = model_fit.params
+pvalues = model_fit.pvalues
 rmse = ft.rMSE(test, predictions)
 rsq = ft.R2(test, predictions)
 mae = ft.MAE(test, predictions)
@@ -79,9 +81,18 @@ df["Value"] = pd.Series(test)
 print(df.head())
 
 filename = "ARIMA" + "_" + mode + "_" + str(ARIMA_order)
-text =  "rmse" + ":" + str(rmse) +  "\n" +\
+text = "rmse" + ":" + str(rmse) +  "\n" +\
             "rsq" + ":" + str(rsq) +  "\n" +\
-            "mae" + ":" + str(mae)
+            "mae" + ":" + str(mae) + "\n" +\
+            "parameters :" + "\n"
+
+for ar in range(1, ARIMA_order[0]+1):
+    text = text + "AR_" + str(ar) + ":" + str(params[ar-1]) +\
+           " (" + str(pvalues[ar-1])+ ")" + "\n"
+
+for ma in range(1, ARIMA_order[2]+1):
+    text = text + "MA_" + str(ma) + ":" + str(params[ARIMA_order[0]+ma-1]) +\
+           " (" + str(pvalues[ARIMA_order[0]+ma-1])+ ")" + "\n"
 
 df.to_csv(filename + ".csv", index=False)
 

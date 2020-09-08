@@ -9,8 +9,8 @@ import pandas as pd
 # ignore warnings
 warnings.filterwarnings("ignore")
 
-mode = "daily"
-#mode = "weekly"
+#mode = "daily"
+mode = "weekly"
 #mode = "monthly"
 
 dailyfile = open('./daily/wti.csv', 'r')
