@@ -96,9 +96,9 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     #m = 28 # weekly
     #m= 30 #weekly_tau1
     #m = 73 #monthly_from_weekly_using_tau1
-    #m = 8  # monthly_from_weekly fixed p =4
+    m = 8  # monthly_from_weekly fixed p =4
     #m = 8 #monthly_from_weekly_using_tau1 fixed p =4
-    m = 28  # monthly from monthly data
+    #m = 28  # monthly from monthly data
     #m = 28 # monthly from weekly data
     #m = 15 # weekly_data+, monthly_data+
 
@@ -142,19 +142,43 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     return m, kernelMeans, kernelSigma, kernelWeights
 
 def predict(X, kernelMeans, kernelSigma, kernelWeights):
-    n = len(X)
-    Yest = []
-    for i in range(n):
-        Yest.append(ft.output(X[i], kernelMeans, kernelSigma, kernelWeights))
-    return Yest
+    # vector prediction
+    if(isinstance(X[0], list)):
+        n = len(X)
+        Yest = []
+        for i in range(n):
+            Yest.append(ft.output(X[i], kernelMeans, kernelSigma, kernelWeights))
+        Yest = np.array(Yest)
+        return Yest
+    # scalar prediction
+    else:
+        return ft.output(X, kernelMeans, kernelSigma, kernelWeights)
 
-def evaluate(data, teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeights):
+def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, original_P, target_P, mode):
     """model test"""
     print("== EVALUATE ==")
     f = open('./result.txt', 'w')
 
-    err, rmse, rsq, mae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
-    print(format('rmse: %f, R2: %f') % (rmse, rsq))
+    # recursive application
+    assert(target_P % original_P == 0) # check if target P can be achieved using n step applications of interval original_P
+    loop = target_P - original_P + 1
+    print("Iterative Application for {} times".format(loop))
+
+    Y_hat = []
+    print(len(teX))
+    for idx, x_element in enumerate(teX):
+        data_copy = copy.deepcopy(data)
+        data_at = index_arr[idx]
+        x = x_element
+        for i in range(0, loop):
+            y_h = predict(x, kernelMeans, kernelSigma, kernelWeights)
+            # update value by prediction
+            data_copy[data_at] = y_h
+            x, data_at = ft.extracting_on_index(tau, E, original_P, data_copy, data_at, mode)
+        Y_hat.append(y_h)
+
+    err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Y_hat)
+    print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
 
     pre = teY - err

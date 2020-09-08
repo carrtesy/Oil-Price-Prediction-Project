@@ -1,11 +1,12 @@
 import GKFN
 import ft
+import pickle
 
 #mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_tau1_for_monthly"
-#mode = "monthly"
+mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
 
@@ -50,8 +51,9 @@ elif(mode == "monthly_data+"): # weekly_data+
     tau = 1
 
 P = 1 # P days/weeks/months after
-dataX, dataY = ft.extracting(tau, E, P, data,mode)
-test_ratio = 0.3
+dataX, dataY, _ = ft.extracting(tau, E, P, data,mode)
+#test_ratio = 0.3 # for daily/weekly data
+test_ratio = 0.2 # for monthly data
 test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
@@ -64,13 +66,25 @@ trY = dataY[:-test_size]
 teX = dataX[-test_size:]
 teY = dataY[-test_size:]
 
-print(teX)
-print(teY)
-
 # parameter
 alpha = 0.5
 loop = 5
 Kernel_Num = 100
 
-GKFN.GKFN(trX, trY, teX, teY, alpha, loop, Kernel_Num)
+# train or load model
+ON_TRAIN = True
+model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
+if(ON_TRAIN):
+    # train model and get hyperparameters
+    num_kernels, kernelMeans, kernelSigma, kernelWeights = GKFN.train(trX, trY, teX, teY, alpha, loop, Kernel_Num)
+    print("Saving model at file : {}".format(model_name))
+    with open(model_name, 'wb') as f:
+        pickle.dump([num_kernels, kernelMeans, kernelSigma, kernelWeights], f)
+else:
+    # load model
+    print("Loading model at file : {}".format(model_name))
+    with open(model_name, 'rb') as f:
+        num_kernels, kernelMeans, kernelSigma, kernelWeights = pickle.load(f)
 
+# evaluate model
+rmse, rsq, mae = GKFN.evaluate(data, teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeights)
