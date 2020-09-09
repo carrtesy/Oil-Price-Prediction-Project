@@ -52,17 +52,16 @@ def smoothnessMeasure(data, mode) :
                 f.write(format("E: %f, tau: %f sm: %f") % (E, tau, sm) + '\n')
                 SM_list.append(temp)
     else:
-        for tau in range(1, 10):
-            for E in range(2, 15):
-                temp=[]
-                a1, a2, _ = extracting(1, E, P, data, mode)
-                sm = SM(a1, a2, E)
-                temp.append(1)
-                temp.append(E)
-                temp.append(sm)
-                print(format("E: %f, tau: 1 sm: %f")%(E, sm))
-                f.write(format("E: %f, tau: 1 sm: %f") % (E, sm) + '\n')
-                SM_list.append(temp)
+        for E in range(2, 15):
+            temp=[]
+            a1, a2, _ = extracting(1, E, P, data, mode)
+            sm = SM(a1, a2, E)
+            temp.append(1)
+            temp.append(E)
+            temp.append(sm)
+            print(format("E: %f, tau: 1 sm: %f")%(E, sm))
+            f.write(format("E: %f, tau: 1 sm: %f") % (E, sm) + '\n')
+            SM_list.append(temp)
     f.close()
 
 
