@@ -25,6 +25,7 @@ Hyperparameter settings
 |---|:---:|:---:|
 | Daily | (5,1,3) (3,1,1) (2,1,0) | (2,0,3) |
 | Weekly | (3,1,3) (4,1,3) (3,1,2) | (4,0,3) | 
+| Monthly | (3,1,1) | (4,0,1) |
 
 
 Model Performance
