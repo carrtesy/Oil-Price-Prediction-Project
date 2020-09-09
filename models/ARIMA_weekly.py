@@ -30,14 +30,14 @@ elif(mode == "monthly"): # Monthly
 
 # hyperparmeters
 test_ratio = 0.2
-ARIMA_order = (5, 1, 3)
+ARIMA_order = (3, 1, 3)
 
 # train / test split
 test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
 
-train, extra, test = data[:-test_size-5], data[-test_size-5:-5], data[-test_size:]
+train, extra, test = data[:-test_size-4], data[-test_size-4:-4], data[-test_size:]
 #train, test = data[:-test_size], data[-test_size:]
 
 
@@ -52,9 +52,9 @@ for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
     model_fit = model.fit(disp = 0, trend='nc')
     output = model_fit.forecast(steps=5)
-    yhat = output[0][4] #output[0]
+    yhat = output[0][4] #output[0][4]
     predictions.append(yhat)
-    obs = extra[t] #test[t]
+    obs = extra[t] #extra[t]
     history.append(obs)
 
     # Track the testing process
