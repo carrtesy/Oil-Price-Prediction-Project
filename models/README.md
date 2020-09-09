@@ -18,6 +18,7 @@
 | Monthly (from daily data, augmentation) | | | | | | | |
 
 - ARIMA
+
 | Data  | constant(P,D,Q) | no_constant(P,D,Q)|
 |---|:---:|:---:|
 | Daily | (5,1,3) (3,1,1) (2,1,0) | (2,0,3) |
