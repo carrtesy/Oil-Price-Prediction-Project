@@ -20,7 +20,7 @@ dailyfile = open('./daily/wti.csv', 'r')
 
 if(mode == "daily"): # Daily
     print("===DAILY DATASET===")
-    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    data = ft.readData(dailyfile, '2000-01-03', '2020-08-30')
 elif(mode == "weekly"): # Weekly_original
     print("===WEEKLY DATASET===")
     #data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
@@ -29,8 +29,8 @@ elif(mode == "monthly"): # Monthly
     #data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
 
 # hyperparmeters
-test_ratio = 0.3
-ARIMA_order = (3, 1, 3)
+test_ratio = 0.2
+ARIMA_order = (3, 1, 1)
 
 # train / test split
 test_size = int(len(data) * test_ratio)

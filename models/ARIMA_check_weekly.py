@@ -19,17 +19,17 @@ weeklyfile = open('./weekly/wti_week.csv', 'r')
 
 if(mode == "daily"): # Daily
     print("===DAILY DATASET===")
-    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    data = ft.readData(dailyfile, '2000-01-03', '2020-08-30')
 elif(mode == "weekly"): # Weekly_original
     print("===WEEKLY DATASET===")
-    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
-    #data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
+    #data = ft.readData(monthlyfile, '1960-01-01', '2020-08-01')
 
 # hyperparmeters
-test_ratio = 0.3
-##ARIMA_order = (2, 0, 0)
+test_ratio = 0.2
+
 
 # train / test split
 test_size = int(len(data) * test_ratio)
@@ -56,57 +56,60 @@ for d in range(2):
                 print(model_fit.aic)
             except:
                 pass
-# (1,0,0), (1,0,1) (2,0,0), (3,0,1), (3,0,2), (4,0,0), (4,0,1), (5,0,2), (3,1,1), (2,1,1), (2,1,2), (3,1,2), (3,1,3), (4,1,3)
+# (1,0,0), (1,0,1) (2,0,0), (3,0,1), (3,0,2), (4,0,0), (4,0,1), (5,0,2), (1,1,0) (2,1,1), (2,1,2), (3,1,1) (3,1,2), (3,1,3), (4,1,3)
 '''
 # check AIC
 '''
 model = ARIMA(history, order=(1,0,0))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7778
+print(model_fit.aic) #7809
 model = ARIMA(history, order=(1,0,1))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7708
+print(model_fit.aic) #7738
 model = ARIMA(history, order=(2,0,0))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7707
+print(model_fit.aic) #7738
 model = ARIMA(history, order=(3,0,1))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7704
+print(model_fit.aic) #7734
 model = ARIMA(history, order=(3,0,2))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7701
+print(model_fit.aic) #7731
 model = ARIMA(history, order=(4,0,0))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7707
+print(model_fit.aic) #7737
 model = ARIMA(history, order=(4,0,1))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7700
+print(model_fit.aic) #7730
 model = ARIMA(history, order=(5,0,2))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7697
-model = ARIMA(history, order=(3,1,1))
+print(model_fit.aic) #7727
+model = ARIMA(history, order=(1,1,0))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7689
+print(model_fit.aic) #7726
 model = ARIMA(history, order=(2,1,1))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7694
+print(model_fit.aic) #7724
 model = ARIMA(history, order=(2,1,2))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7690
+print(model_fit.aic) #7720
+model = ARIMA(history, order=(3,1,1))
+model_fit = model.fit(disp=0, trend='nc')
+print(model_fit.aic) #7719
 model = ARIMA(history, order=(3,1,2))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7686
+print(model_fit.aic) #7717
 model = ARIMA(history, order=(3,1,3))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7684
+print(model_fit.aic) #7714
 model = ARIMA(history, order=(4,1,3))
 model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #7685
+print(model_fit.aic) #7715
 #(3,1,3)>(4,1,3)>(3,1,2)
 '''
 '''
 # constant ARIMA order check
-
+print("----constant----")
 for d in range(2):
     for i in range(7):
         for j in range(4):
@@ -122,33 +125,33 @@ for d in range(2):
 '''
 
 #check AIC
-
+'''
 model = ARIMA(history, order=(1,0,0))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7777
+print(model_fit.aic) #7808
 model = ARIMA(history, order=(1,0,1))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7706
+print(model_fit.aic) #7736
 model = ARIMA(history, order=(2,0,0))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7705
+print(model_fit.aic) #7736
 model = ARIMA(history, order=(3,0,1))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7701
+print(model_fit.aic) #7731
 model = ARIMA(history, order=(4,0,0))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7705
+print(model_fit.aic) #7735
 model = ARIMA(history, order=(4,0,1))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7697
+print(model_fit.aic) #7727
 model = ARIMA(history, order=(4,0,2))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7701
+print(model_fit.aic) #7731
 model = ARIMA(history, order=(4,0,3))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7692
+print(model_fit.aic) #7721
 model = ARIMA(history, order=(5,0,2))
 model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7694
-
+print(model_fit.aic) #7724
+'''
 #(4,0,3)
