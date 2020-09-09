@@ -100,7 +100,7 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     #m = 8 #monthly_from_weekly_using_tau1 fixed p =4
     #m = 28  # monthly from monthly data
     #m = 28 # monthly from weekly data
-    m = 50 # weekly_data+, monthly_data+
+    m = 28 # weekly_data+, monthly_data+
 
     kernelMeans = kernelMeans[:m]
     kernelSigma = kernelSigma[:m]

@@ -1,10 +1,10 @@
 import ft
 
 #mode = "daily"
-mode = "weekly"
+#mode = "weekly"
 #mode = "monthly"
 #mode = "weekly_data+"
-#mode = "monthly_data+"
+mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
 weeklyfile = open('./weekly/wti_week.csv', 'r')
@@ -21,10 +21,10 @@ elif(mode == "monthly"): # Monthly
     data = ft.readData(monthlyfile, '1946-01-01', '2020-08-01')
 elif(mode == "weekly_data+"): # weekly_data+
     print("===WEEKLY DATASET===")
-    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    data = ft.readData(dailyfile, '2000-01-03', '2020-08-31')
 elif(mode == "monthly_data+"): # weekly_data+
     print("===MONTHLY DATASET===")
-    data = ft.readData(dailyfile, '2000-01-03', '2020-03-13')
+    data = ft.readData(dailyfile, '2000-01-03', '2020-08-31')
 
 
 # data에 대하여 E, tau에 따른 smoothness 값 측정

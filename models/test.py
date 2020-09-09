@@ -42,12 +42,12 @@ elif(mode == "monthly"): # Monthly
 elif(mode == "weekly_data+"): # weekly_data+
     print("===WEEKLY DATASET===")
     data = ft.readData(dailyfile, '2000-01-03', '2020-08-31')
-    E = 7
+    E = 6
     tau = 1
 elif(mode == "monthly_data+"): # weekly_data+
     print("===MONTHLY DATASET===")
     data = ft.readData(dailyfile, '2000-01-03', '2020-08-31')
-    E = 7
+    E = 5
     tau = 1
 
 P = 1 # P days/weeks/months after
