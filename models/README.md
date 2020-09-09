@@ -18,6 +18,12 @@
 | Monthly (from daily data, augmentation) | | | | | | | |
 
 - ARIMA
+| Data  | constant(P,D,Q) | no_constant(P,D,Q)|
+|---|:---:|:---:|
+| Daily | (5,1,3) (3,1,1) (2,1,0) | (2,0,3) |
+| Weekly | (3,1,3) (4,1,3) (3,1,2) | (4,0,3) | 
+
+
 
 | Model  | (P, D, Q) | RMSE | R Square |  MAE |
 |---|:---:|:---:|:---:|---:|
