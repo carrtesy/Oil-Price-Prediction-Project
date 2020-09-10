@@ -7,10 +7,10 @@
 
 | Model  | kernel # | tau | E | SM |  RMSE | R Square |  MAE |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|---:|
-| Daily | | | | | | | |
-| Weekly | | | | | | | |
-| Weekly(tau=1) | | | | | | | |
-| Monthly (from monthly data) | | | | | | | | 
+| Daily | 16 | 1 | 7 | 0.116520 | 2.559302 | 0.950088 | 1.372816 |
+| Weekly (kernel23) | 23 | 1 | 6 | 0.039665 | 3.603522 | 0.967516 | 2.479014 |
+| Weekly (kernel62) | 62 | 1 | 6 | 0.039665 | 3.580921  | 0.967922 | 2.483029 |
+| Monthly (from monthly data) | 7 | 1 | 6 | 0.127713 | 50.732332 | -3.976902 | 36.233607 |
 | Monthly (from weekly data, P = 4) | 21 | 4 | 5 | | 7.580696 | 0.856241 | 5.441237 |
 | Monthly (from weekly data, P = 4, tau=1) | 55 | 1 | 10 | 0.131003 | 7.498386 | 0.859346 | 5.305326 |
 | Monthly (from weekly data, recursive) | 35 | 1 | 6 | 0.039365 | 7.160154 | 0.871749 | 5.282052 | 
