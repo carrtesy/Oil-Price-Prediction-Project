@@ -1,0 +1,351 @@
+train: Phase1 : m = 2, rmse = 8.989983, rsq = 0.908320 
+validation Phase1 : m = 2, rmse = 11.196734, rsq = 0.686382
+train: Phase1 : m = 3, rmse = 6.551779, rsq = 0.951306 
+validation Phase1 : m = 3, rmse = 8.378261, rsq = 0.824400
+train: Phase1 : m = 4, rmse = 4.664380, rsq = 0.975320 
+validation Phase1 : m = 4, rmse = 6.113568, rsq = 0.906501
+train: Phase1 : m = 5, rmse = 4.494729, rsq = 0.977083 
+validation Phase1 : m = 5, rmse = 6.558955, rsq = 0.892382
+train: Phase1 : m = 6, rmse = 6.768295, rsq = 0.948034 
+validation Phase1 : m = 6, rmse = 7.803371, rsq = 0.847671
+train: Phase1 : m = 7, rmse = 5.945479, rsq = 0.959901 
+validation Phase1 : m = 7, rmse = 7.712840, rsq = 0.851185
+train: Phase1 : m = 8, rmse = 4.981504, rsq = 0.971850 
+validation Phase1 : m = 8, rmse = 7.380851, rsq = 0.863721
+train: Phase1 : m = 9, rmse = 4.737429, rsq = 0.974541 
+validation Phase1 : m = 9, rmse = 7.008884, rsq = 0.877110
+train: Phase1 : m = 10, rmse = 4.136035, rsq = 0.980594 
+validation Phase1 : m = 10, rmse = 5.422335, rsq = 0.926449
+train: Phase1 : m = 11, rmse = 4.005883, rsq = 0.981797 
+validation Phase1 : m = 11, rmse = 5.126814, rsq = 0.934247
+train: Phase1 : m = 12, rmse = 3.968238, rsq = 0.982137 
+validation Phase1 : m = 12, rmse = 5.103046, rsq = 0.934856
+train: Phase1 : m = 13, rmse = 3.816525, rsq = 0.983477 
+validation Phase1 : m = 13, rmse = 5.106173, rsq = 0.934776
+train: Phase1 : m = 14, rmse = 3.782554, rsq = 0.983770 
+validation Phase1 : m = 14, rmse = 5.106199, rsq = 0.934775
+train: Phase1 : m = 15, rmse = 3.721900, rsq = 0.984286 
+validation Phase1 : m = 15, rmse = 5.023519, rsq = 0.936870
+train: Phase1 : m = 16, rmse = 3.651923, rsq = 0.984871 
+validation Phase1 : m = 16, rmse = 4.984014, rsq = 0.937859
+train: Phase1 : m = 17, rmse = 3.641613, rsq = 0.984957 
+validation Phase1 : m = 17, rmse = 4.974327, rsq = 0.938101
+train: Phase1 : m = 18, rmse = 3.587971, rsq = 0.985397 
+validation Phase1 : m = 18, rmse = 4.926428, rsq = 0.939287
+train: Phase1 : m = 19, rmse = 3.509267, rsq = 0.986030 
+validation Phase1 : m = 19, rmse = 4.823004, rsq = 0.941809
+train: Phase1 : m = 20, rmse = 3.673360, rsq = 0.984693 
+validation Phase1 : m = 20, rmse = 5.136364, rsq = 0.934002
+train: Phase1 : m = 21, rmse = 4.622083, rsq = 0.975766 
+validation Phase1 : m = 21, rmse = 4.620279, rsq = 0.946598
+train: Phase1 : m = 22, rmse = 4.456946, rsq = 0.977466 
+validation Phase1 : m = 22, rmse = 4.664800, rsq = 0.945564
+train: Phase1 : m = 23, rmse = 4.526675, rsq = 0.976756 
+validation Phase1 : m = 23, rmse = 4.597664, rsq = 0.947120
+train: Phase1 : m = 24, rmse = 4.433150, rsq = 0.977706 
+validation Phase1 : m = 24, rmse = 4.494356, rsq = 0.949470
+train: Phase1 : m = 25, rmse = 3.608522, rsq = 0.985229 
+validation Phase1 : m = 25, rmse = 4.433373, rsq = 0.950832
+train: Phase1 : m = 26, rmse = 3.602230, rsq = 0.985280 
+validation Phase1 : m = 26, rmse = 4.440852, rsq = 0.950666
+train: Phase1 : m = 27, rmse = 3.612330, rsq = 0.985198 
+validation Phase1 : m = 27, rmse = 4.482948, rsq = 0.949726
+train: Phase1 : m = 28, rmse = 3.561617, rsq = 0.985610 
+validation Phase1 : m = 28, rmse = 4.484813, rsq = 0.949684
+train: Phase1 : m = 29, rmse = 3.548194, rsq = 0.985719 
+validation Phase1 : m = 29, rmse = 4.382875, rsq = 0.951945
+train: Phase1 : m = 30, rmse = 3.538543, rsq = 0.985796 
+validation Phase1 : m = 30, rmse = 4.408102, rsq = 0.951391
+train: Phase1 : m = 31, rmse = 3.546245, rsq = 0.985734 
+validation Phase1 : m = 31, rmse = 4.392156, rsq = 0.951742
+train: Phase1 : m = 32, rmse = 3.501039, rsq = 0.986096 
+validation Phase1 : m = 32, rmse = 4.330651, rsq = 0.953084
+train: Phase1 : m = 33, rmse = 3.490714, rsq = 0.986178 
+validation Phase1 : m = 33, rmse = 4.320992, rsq = 0.953293
+train: Phase1 : m = 34, rmse = 3.477027, rsq = 0.986286 
+validation Phase1 : m = 34, rmse = 4.321204, rsq = 0.953288
+train: Phase1 : m = 35, rmse = 3.461282, rsq = 0.986410 
+validation Phase1 : m = 35, rmse = 4.289466, rsq = 0.953972
+train: Phase1 : m = 36, rmse = 3.452603, rsq = 0.986478 
+validation Phase1 : m = 36, rmse = 4.282142, rsq = 0.954129
+train: Phase1 : m = 37, rmse = 3.452541, rsq = 0.986478 
+validation Phase1 : m = 37, rmse = 4.323095, rsq = 0.953247
+train: Phase1 : m = 38, rmse = 3.327615, rsq = 0.987439 
+validation Phase1 : m = 38, rmse = 4.286657, rsq = 0.954032
+train: Phase1 : m = 39, rmse = 3.295876, rsq = 0.987678 
+validation Phase1 : m = 39, rmse = 4.284665, rsq = 0.954075
+train: Phase1 : m = 40, rmse = 3.280781, rsq = 0.987790 
+validation Phase1 : m = 40, rmse = 4.270271, rsq = 0.954383
+train: Phase1 : m = 41, rmse = 3.280461, rsq = 0.987793 
+validation Phase1 : m = 41, rmse = 4.282712, rsq = 0.954117
+train: Phase1 : m = 42, rmse = 3.280741, rsq = 0.987790 
+validation Phase1 : m = 42, rmse = 4.264207, rsq = 0.954512
+train: Phase1 : m = 43, rmse = 3.245468, rsq = 0.988052 
+validation Phase1 : m = 43, rmse = 4.262406, rsq = 0.954551
+train: Phase1 : m = 44, rmse = 3.238295, rsq = 0.988104 
+validation Phase1 : m = 44, rmse = 4.268719, rsq = 0.954416
+train: Phase1 : m = 45, rmse = 3.232527, rsq = 0.988147 
+validation Phase1 : m = 45, rmse = 4.278252, rsq = 0.954212
+train: Phase1 : m = 46, rmse = 3.211568, rsq = 0.988300 
+validation Phase1 : m = 46, rmse = 4.203766, rsq = 0.955793
+train: Phase1 : m = 47, rmse = 3.268314, rsq = 0.987883 
+validation Phase1 : m = 47, rmse = 4.631199, rsq = 0.946346
+train: Phase1 : m = 48, rmse = 3.215389, rsq = 0.988272 
+validation Phase1 : m = 48, rmse = 4.183763, rsq = 0.956212
+train: Phase1 : m = 49, rmse = 3.215642, rsq = 0.988270 
+validation Phase1 : m = 49, rmse = 4.184845, rsq = 0.956190
+train: Phase1 : m = 50, rmse = 3.184141, rsq = 0.988499 
+validation Phase1 : m = 50, rmse = 4.131322, rsq = 0.957303
+train: Phase1 : m = 51, rmse = 3.170792, rsq = 0.988595 
+validation Phase1 : m = 51, rmse = 4.127586, rsq = 0.957380
+train: Phase1 : m = 52, rmse = 3.164755, rsq = 0.988638 
+validation Phase1 : m = 52, rmse = 4.120791, rsq = 0.957521
+train: Phase1 : m = 53, rmse = 3.160764, rsq = 0.988667 
+validation Phase1 : m = 53, rmse = 4.127321, rsq = 0.957386
+train: Phase1 : m = 54, rmse = 3.174672, rsq = 0.988567 
+validation Phase1 : m = 54, rmse = 4.163457, rsq = 0.956636
+train: Phase1 : m = 55, rmse = 3.160485, rsq = 0.988669 
+validation Phase1 : m = 55, rmse = 4.204030, rsq = 0.955787
+train: Phase1 : m = 56, rmse = 3.151705, rsq = 0.988732 
+validation Phase1 : m = 56, rmse = 4.187562, rsq = 0.956133
+train: Phase1 : m = 57, rmse = 3.131307, rsq = 0.988877 
+validation Phase1 : m = 57, rmse = 4.186675, rsq = 0.956151
+train: Phase1 : m = 58, rmse = 3.123322, rsq = 0.988934 
+validation Phase1 : m = 58, rmse = 4.186543, rsq = 0.956154
+train: Phase1 : m = 59, rmse = 3.115415, rsq = 0.988990 
+validation Phase1 : m = 59, rmse = 4.186481, rsq = 0.956155
+train: Phase1 : m = 60, rmse = 3.111944, rsq = 0.989014 
+validation Phase1 : m = 60, rmse = 4.186609, rsq = 0.956153
+train: Phase1 : m = 61, rmse = 3.109269, rsq = 0.989033 
+validation Phase1 : m = 61, rmse = 4.196248, rsq = 0.955951
+train: Phase1 : m = 62, rmse = 3.097854, rsq = 0.989114 
+validation Phase1 : m = 62, rmse = 4.197520, rsq = 0.955924
+train: Phase1 : m = 63, rmse = 3.099603, rsq = 0.989101 
+validation Phase1 : m = 63, rmse = 4.197327, rsq = 0.955928
+train: Phase1 : m = 64, rmse = 3.061091, rsq = 0.989371 
+validation Phase1 : m = 64, rmse = 3.955431, rsq = 0.960861
+train: Phase1 : m = 65, rmse = 3.037655, rsq = 0.989533 
+validation Phase1 : m = 65, rmse = 3.932064, rsq = 0.961322
+train: Phase1 : m = 66, rmse = 3.019844, rsq = 0.989655 
+validation Phase1 : m = 66, rmse = 3.938392, rsq = 0.961198
+train: Phase1 : m = 67, rmse = 3.011600, rsq = 0.989712 
+validation Phase1 : m = 67, rmse = 3.938327, rsq = 0.961199
+train: Phase1 : m = 68, rmse = 3.183780, rsq = 0.988501 
+validation Phase1 : m = 68, rmse = 3.965710, rsq = 0.960658
+train: Phase1 : m = 69, rmse = 2.909905, rsq = 0.990395 
+validation Phase1 : m = 69, rmse = 3.965247, rsq = 0.960667
+train: Phase1 : m = 70, rmse = 2.738156, rsq = 0.991495 
+validation Phase1 : m = 70, rmse = 3.974535, rsq = 0.960482
+train: Phase1 : m = 71, rmse = 2.914680, rsq = 0.990363 
+validation Phase1 : m = 71, rmse = 3.996493, rsq = 0.960045
+train: Phase1 : m = 72, rmse = 2.877318, rsq = 0.990609 
+validation Phase1 : m = 72, rmse = 3.991248, rsq = 0.960149
+train: Phase1 : m = 73, rmse = 2.869596, rsq = 0.990659 
+validation Phase1 : m = 73, rmse = 3.986506, rsq = 0.960244
+train: Phase1 : m = 74, rmse = 2.862001, rsq = 0.990708 
+validation Phase1 : m = 74, rmse = 3.981227, rsq = 0.960349
+train: Phase1 : m = 75, rmse = 2.853414, rsq = 0.990764 
+validation Phase1 : m = 75, rmse = 3.981371, rsq = 0.960346
+train: Phase1 : m = 76, rmse = 2.848606, rsq = 0.990795 
+validation Phase1 : m = 76, rmse = 3.985879, rsq = 0.960257
+train: Phase1 : m = 77, rmse = 2.844692, rsq = 0.990820 
+validation Phase1 : m = 77, rmse = 3.976848, rsq = 0.960436
+train: Phase1 : m = 78, rmse = 2.836365, rsq = 0.990874 
+validation Phase1 : m = 78, rmse = 3.928296, rsq = 0.961397
+train: Phase1 : m = 79, rmse = 2.835596, rsq = 0.990879 
+validation Phase1 : m = 79, rmse = 3.907448, rsq = 0.961805
+train: Phase1 : m = 80, rmse = 2.830350, rsq = 0.990913 
+validation Phase1 : m = 80, rmse = 3.911211, rsq = 0.961732
+train: Phase1 : m = 81, rmse = 2.825468, rsq = 0.990944 
+validation Phase1 : m = 81, rmse = 3.919089, rsq = 0.961577
+train: Phase1 : m = 82, rmse = 2.816448, rsq = 0.991002 
+validation Phase1 : m = 82, rmse = 3.921392, rsq = 0.961532
+train: Phase1 : m = 83, rmse = 2.811315, rsq = 0.991034 
+validation Phase1 : m = 83, rmse = 3.900694, rsq = 0.961937
+train: Phase1 : m = 84, rmse = 2.804987, rsq = 0.991075 
+validation Phase1 : m = 84, rmse = 3.880865, rsq = 0.962323
+train: Phase1 : m = 85, rmse = 2.795975, rsq = 0.991132 
+validation Phase1 : m = 85, rmse = 3.880180, rsq = 0.962336
+train: Phase1 : m = 86, rmse = 2.792939, rsq = 0.991151 
+validation Phase1 : m = 86, rmse = 3.929568, rsq = 0.961372
+train: Phase1 : m = 87, rmse = 2.785028, rsq = 0.991201 
+validation Phase1 : m = 87, rmse = 3.928197, rsq = 0.961399
+train: Phase1 : m = 88, rmse = 2.778657, rsq = 0.991242 
+validation Phase1 : m = 88, rmse = 3.926436, rsq = 0.961433
+train: Phase1 : m = 89, rmse = 2.776471, rsq = 0.991255 
+validation Phase1 : m = 89, rmse = 3.967292, rsq = 0.960626
+train: Phase1 : m = 90, rmse = 2.765740, rsq = 0.991323 
+validation Phase1 : m = 90, rmse = 3.899827, rsq = 0.961954
+train: Phase1 : m = 91, rmse = 2.760575, rsq = 0.991355 
+validation Phase1 : m = 91, rmse = 3.899744, rsq = 0.961956
+train: Phase1 : m = 92, rmse = 2.755885, rsq = 0.991385 
+validation Phase1 : m = 92, rmse = 3.899237, rsq = 0.961966
+train: Phase1 : m = 93, rmse = 2.753038, rsq = 0.991402 
+validation Phase1 : m = 93, rmse = 3.946758, rsq = 0.961033
+train: Phase1 : m = 94, rmse = 2.754944, rsq = 0.991390 
+validation Phase1 : m = 94, rmse = 3.939509, rsq = 0.961176
+train: Phase1 : m = 95, rmse = 2.746684, rsq = 0.991442 
+validation Phase1 : m = 95, rmse = 3.939190, rsq = 0.961182
+train: Phase1 : m = 96, rmse = 2.739005, rsq = 0.991490 
+validation Phase1 : m = 96, rmse = 3.940055, rsq = 0.961165
+train: Phase1 : m = 97, rmse = 2.748260, rsq = 0.991432 
+validation Phase1 : m = 97, rmse = 3.942964, rsq = 0.961108
+train: Phase1 : m = 98, rmse = 2.729758, rsq = 0.991547 
+validation Phase1 : m = 98, rmse = 3.937408, rsq = 0.961217
+train: Phase1 : m = 99, rmse = 2.733031, rsq = 0.991527 
+validation Phase1 : m = 99, rmse = 3.939741, rsq = 0.961171
+train: Phase1 : m = 100, rmse = 2.726858, rsq = 0.991565 
+validation Phase1 : m = 100, rmse = 3.938203, rsq = 0.961202
+train: Phase1 : m = 101, rmse = 2.769348, rsq = 0.991300 
+validation Phase1 : m = 101, rmse = 3.941360, rsq = 0.961139
+Confidence Interval: [1.794583, 2.076864]
+Phase 2 step rmse = 3.950158, rsq = 0.982299
+Phase 2 step rmse = 3.158507, rsq = 0.988683
+Phase 2 step rmse = 3.209527, rsq = 0.988315
+Phase 2 step rmse = 3.345279, rsq = 0.987305
+Phase 2 step rmse = 3.351189, rsq = 0.987260
+Phase 2 step rmse = 3.371000, rsq = 0.987109
+Phase 2 step rmse = 3.260975, rsq = 0.987937
+Phase 2 step rmse = 3.298653, rsq = 0.987657
+Phase 2 step rmse = 3.855997, rsq = 0.983133
+Phase 2 step rmse = 4.063352, rsq = 0.981271
+Phase 2 step rmse = 3.032722, rsq = 0.989567
+Phase 2 step rmse = 2.743573, rsq = 0.991461
+Phase 2 step rmse = 2.856326, rsq = 0.990745
+Phase 2 step rmse = 2.853123, rsq = 0.990766
+Phase 2 step rmse = 2.512091, rsq = 0.992841
+Phase 3 step rmse = 2.491519, rsq = 0.992958
+Phase 3 step rmse = 2.508031, rsq = 0.992865
+Phase 3 step rmse = 2.474465, rsq = 0.993054
+Phase 3 step rmse = 2.364543, rsq = 0.993658
+Phase 3 step rmse = 2.365829, rsq = 0.993651
+Phase 3 step rmse = 2.369195, rsq = 0.993633
+Phase 3 step rmse = 2.321710, rsq = 0.993885
+Phase 3 step rmse = 2.329280, rsq = 0.993845
+Phase 3 step rmse = 2.170977, rsq = 0.994654
+Phase 3 step rmse = 2.184276, rsq = 0.994588
+Phase 3 step rmse = 2.073857, rsq = 0.995121
+Phase 3 step rmse = 2.316815, rsq = 0.993911
+Phase 3 step rmse = 2.063325, rsq = 0.995171
+Phase 3 step rmse = 2.054662, rsq = 0.995211
+Phase 3 step rmse = 1.964360, rsq = 0.995623
+Phase 2 step rmse = 1.954949, rsq = 0.995665
+Phase 2 step rmse = 1.966513, rsq = 0.995613
+Phase 2 step rmse = 1.958901, rsq = 0.995647
+Phase 2 step rmse = 2.198815, rsq = 0.994516
+Phase 2 step rmse = 2.199637, rsq = 0.994511
+Phase 2 step rmse = 2.196452, rsq = 0.994527
+Phase 2 step rmse = 2.194751, rsq = 0.994536
+Phase 2 step rmse = 2.195241, rsq = 0.994533
+Phase 2 step rmse = 2.075912, rsq = 0.995112
+Phase 2 step rmse = 2.069222, rsq = 0.995143
+Phase 2 step rmse = 2.053143, rsq = 0.995218
+Phase 2 step rmse = 1.968339, rsq = 0.995605
+Phase 2 step rmse = 2.183248, rsq = 0.994593
+Phase 2 step rmse = 2.260673, rsq = 0.994203
+Phase 2 step rmse = 1.930060, rsq = 0.995774
+Phase 3 step rmse = 1.921405, rsq = 0.995812
+Phase 3 step rmse = 1.969731, rsq = 0.995599
+Phase 3 step rmse = 1.955712, rsq = 0.995661
+Phase 3 step rmse = 2.091066, rsq = 0.995040
+Phase 3 step rmse = 2.097675, rsq = 0.995008
+Phase 3 step rmse = 2.107814, rsq = 0.994960
+Phase 3 step rmse = 2.103851, rsq = 0.994979
+Phase 3 step rmse = 2.115645, rsq = 0.994923
+Phase 3 step rmse = 2.082935, rsq = 0.995078
+Phase 3 step rmse = 2.228460, rsq = 0.994367
+Phase 3 step rmse = 1.940674, rsq = 0.995728
+Phase 3 step rmse = 2.111588, rsq = 0.994942
+Phase 3 step rmse = 1.962386, rsq = 0.995632
+Phase 3 step rmse = 1.969490, rsq = 0.995600
+Phase 3 step rmse = 1.864546, rsq = 0.996056
+Phase 2 step rmse = 1.859467, rsq = 0.996078
+Phase 2 step rmse = 1.873255, rsq = 0.996019
+Phase 2 step rmse = 1.864801, rsq = 0.996055
+Phase 2 step rmse = 2.150645, rsq = 0.994753
+Phase 2 step rmse = 2.150730, rsq = 0.994753
+Phase 2 step rmse = 2.150410, rsq = 0.994754
+Phase 2 step rmse = 2.146423, rsq = 0.994774
+Phase 2 step rmse = 2.147344, rsq = 0.994769
+Phase 2 step rmse = 1.976906, rsq = 0.995567
+Phase 2 step rmse = 1.940732, rsq = 0.995727
+Phase 2 step rmse = 1.924510, rsq = 0.995799
+Phase 2 step rmse = 2.048354, rsq = 0.995240
+Phase 2 step rmse = 2.088684, rsq = 0.995051
+Phase 2 step rmse = 2.126773, rsq = 0.994869
+Phase 2 step rmse = 1.868267, rsq = 0.996041
+Phase 3 step rmse = 1.858537, rsq = 0.996082
+Phase 3 step rmse = 1.903863, rsq = 0.995888
+Phase 3 step rmse = 1.883864, rsq = 0.995974
+Phase 3 step rmse = 2.012973, rsq = 0.995403
+Phase 3 step rmse = 2.020732, rsq = 0.995368
+Phase 3 step rmse = 2.031267, rsq = 0.995320
+Phase 3 step rmse = 2.033659, rsq = 0.995308
+Phase 3 step rmse = 2.045268, rsq = 0.995255
+Phase 3 step rmse = 2.028462, rsq = 0.995332
+Phase 3 step rmse = 2.194160, rsq = 0.994539
+Phase 3 step rmse = 1.925015, rsq = 0.995796
+Phase 3 step rmse = 2.088504, rsq = 0.995052
+Phase 3 step rmse = 1.899494, rsq = 0.995907
+Phase 3 step rmse = 1.896347, rsq = 0.995921
+Phase 3 step rmse = 1.832523, rsq = 0.996191
+Phase 2 step rmse = 1.828117, rsq = 0.996209
+Phase 2 step rmse = 1.844326, rsq = 0.996141
+Phase 2 step rmse = 1.836054, rsq = 0.996176
+Phase 2 step rmse = 2.151641, rsq = 0.994748
+Phase 2 step rmse = 2.152464, rsq = 0.994744
+Phase 2 step rmse = 2.153892, rsq = 0.994737
+Phase 2 step rmse = 2.150845, rsq = 0.994752
+Phase 2 step rmse = 2.154400, rsq = 0.994735
+Phase 2 step rmse = 1.933584, rsq = 0.995759
+Phase 2 step rmse = 1.900761, rsq = 0.995902
+Phase 2 step rmse = 1.912352, rsq = 0.995851
+Phase 2 step rmse = 2.020491, rsq = 0.995369
+Phase 2 step rmse = 2.102485, rsq = 0.994986
+Phase 2 step rmse = 2.053268, rsq = 0.995218
+Phase 2 step rmse = 1.834475, rsq = 0.996182
+Phase 3 step rmse = 1.824121, rsq = 0.996225
+Phase 3 step rmse = 1.875844, rsq = 0.996008
+Phase 3 step rmse = 1.853721, rsq = 0.996102
+Phase 3 step rmse = 1.975622, rsq = 0.995572
+Phase 3 step rmse = 1.984109, rsq = 0.995534
+Phase 3 step rmse = 1.994977, rsq = 0.995485
+Phase 3 step rmse = 1.998239, rsq = 0.995470
+Phase 3 step rmse = 2.009972, rsq = 0.995417
+Phase 3 step rmse = 1.998434, rsq = 0.995470
+Phase 3 step rmse = 2.159921, rsq = 0.994708
+Phase 3 step rmse = 1.916383, rsq = 0.995834
+Phase 3 step rmse = 2.058409, rsq = 0.995194
+Phase 3 step rmse = 1.872362, rsq = 0.996023
+Phase 3 step rmse = 1.869138, rsq = 0.996037
+Phase 3 step rmse = 1.809265, rsq = 0.996287
+Phase 2 step rmse = 1.805993, rsq = 0.996300
+Phase 2 step rmse = 1.823961, rsq = 0.996226
+Phase 2 step rmse = 1.815454, rsq = 0.996261
+Phase 2 step rmse = 2.104578, rsq = 0.994976
+Phase 2 step rmse = 2.106983, rsq = 0.994964
+Phase 2 step rmse = 2.110162, rsq = 0.994949
+Phase 2 step rmse = 2.113284, rsq = 0.994934
+Phase 2 step rmse = 2.119194, rsq = 0.994906
+Phase 2 step rmse = 1.882002, rsq = 0.995982
+Phase 2 step rmse = 1.869198, rsq = 0.996037
+Phase 2 step rmse = 1.949545, rsq = 0.995689
+Phase 2 step rmse = 1.974477, rsq = 0.995578
+Phase 2 step rmse = 2.074142, rsq = 0.995120
+Phase 2 step rmse = 2.002125, rsq = 0.995453
+Phase 2 step rmse = 1.809888, rsq = 0.996284
+Phase 3 step rmse = 1.800816, rsq = 0.996321
+Phase 3 step rmse = 1.862836, rsq = 0.996064
+Phase 3 step rmse = 1.838528, rsq = 0.996166
+Phase 3 step rmse = 1.954098, rsq = 0.995668
+Phase 3 step rmse = 1.963424, rsq = 0.995627
+Phase 3 step rmse = 1.974835, rsq = 0.995576
+Phase 3 step rmse = 1.976808, rsq = 0.995567
+Phase 3 step rmse = 1.988949, rsq = 0.995513
+Phase 3 step rmse = 1.975920, rsq = 0.995571
+Phase 3 step rmse = 2.109066, rsq = 0.994954
+Phase 3 step rmse = 1.911977, rsq = 0.995853
+Phase 3 step rmse = 2.034450, rsq = 0.995305
+Phase 3 step rmse = 1.849990, rsq = 0.996118
+Phase 3 step rmse = 1.842382, rsq = 0.996150
+Phase 3 step rmse = 1.788021, rsq = 0.996373
