@@ -14,8 +14,8 @@ add weekly_data+, monthly_data+ using daily data
 
 #mode = "daily"
 #mode = "weekly_origin"
-#mode = "weekly_tau1"
-mode = "weekly_tau1_for_monthly"
+mode = "weekly_tau1"
+#mode = "weekly_tau1_for_monthly"
 #mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
@@ -36,14 +36,14 @@ elif(mode == "weekly_origin"): # Weekly_original
     tau = 5
 elif(mode == "weekly_tau1"): # Weekly_tau1
     print("===WEEKLY DATASET===")
-    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
     E = 6
     tau = 1
 elif(mode == "weekly_tau1_for_monthly"): # Weekly_tau1 P=4
     print("===WEEKLY DATASET===")
-    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
-    E = 18
-    tau = 4
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
+    E = 10
+    tau = 1
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
     data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
@@ -60,12 +60,12 @@ elif(mode == "monthly_data+"): # monthly_data+
     E = 5
     tau = 1
 
-P = 4 # P days/weeks/months after
+P = 1 # P days/weeks/months after
 target_P = 4 # recursive expectation using interval P
 gap = target_P - P
 
 dataX, dataY, index = ft.extracting(tau, E, P, data, mode)
-test_ratio = 0.3
+test_ratio = 0.2
 test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
@@ -75,7 +75,7 @@ trX = dataX[:-test_size]
 trY = dataY[:-test_size]
 
 # Test
-
+'''
 teX = dataX[-test_size:]
 teY = dataY[-test_size:]
 te_index = index[-test_size:]
@@ -83,7 +83,7 @@ te_index = index[-test_size:]
 teX = dataX[-test_size-gap:-gap]
 teY = dataY[-test_size:]
 te_index = index[-test_size-gap:-gap]
-'''
+
 # parameter
 alpha = 0.5
 loop = 5

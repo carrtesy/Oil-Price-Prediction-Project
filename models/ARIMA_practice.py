@@ -42,7 +42,7 @@ def readData(inputfile, startdate, enddate):
 
 if(mode == "daily"): # Daily
     print("===DAILY DATASET===")
-    data = readData(dailyfile, '2000-01-03', '2020-03-13')
+    data = readData(dailyfile, '2000-01-03', '2020-08-31')
 elif(mode == "weekly"): # Weekly_original
     print("===WEEKLY DATASET===")
     data = readData(weeklyfile, '1986-01-10', '2020-08-28')
@@ -53,7 +53,7 @@ elif(mode == "monthly"): # Monthly
 
 # hyperparmeters
 test_ratio = 0.2
-ARIMA_order = (3, 1, 3)
+ARIMA_order = (3,1,3)
 
 # train / test split
 test_size = int(len(data) * test_ratio)
@@ -65,6 +65,7 @@ train, test = data.values[:-test_size], data.values[-test_size:]
 
 # evaluate models
 history = [x for x in train]
+print(history[:][0])
 predictions = list()
 
 model = ARIMA(history, order=ARIMA_order)
@@ -84,4 +85,11 @@ plt.plot(fc_series, label='forecast')
 plt.fill_between(lower_series.index, lower_series, upper_series, color='k', alpha=.15)
 plt.title('Forecast vs Actuals')
 plt.legend(loc='upper left', fontsize=8)
+plt.savefig("weekly_ARIMA.png")
 plt.show()
+
+# Save
+df2 = pd.DataFrame()
+df2["Estimate"] = pd.Series(fc_series)
+df2["Value"] = pd.Series(test)
+df2.to_csv("weekly_ARIMA.csv", index=False)

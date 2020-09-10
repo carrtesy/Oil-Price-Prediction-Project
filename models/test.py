@@ -31,9 +31,9 @@ elif(mode == "weekly_tau1"): # Weekly_tau1
     tau = 1
 elif(mode == "weekly_tau1_for_monthly"): # Weekly_tau1
     print("===WEEKLY DATASET===")
-    data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
-    E = 10
-    tau = 1
+    data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
+    E = 5
+    tau = 4
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
     data = ft.readData(monthlyfile, '1960-01-01', '2020-06-01')
