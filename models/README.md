@@ -11,11 +11,11 @@
 | Weekly | | | | | | | |
 | Weekly(tau=1) | | | | | | | |
 | Monthly (from monthly data) | | | | | | | | 
-| Monthly (from weekly data, P = 4) | | | | | | | |
-| Monthly (from weekly data, P = 4, tau=1) | | | | | | | |
-| Monthly (from weekly data, recursive) | | | | | | | | 
-| Weekly (from daily data, augmentation) | | | | | | | |
-| Monthly (from daily data, augmentation) | | | | | | | |
+| Monthly (from weekly data, P = 4) | 21 | 4 | 5 | | 7.580696 | 0.856241 | 5.441237 |
+| Monthly (from weekly data, P = 4, tau=1) | 55 | 1 | 10 |  | 7.498386 | 0.859346 | 5.305326 |
+| Monthly (from weekly data, recursive) | 35 | 1 | 6 | 0.039365 | 7.160154 | 0.871749 | 5.282052 | 
+| Weekly (from daily data, augmentation) | 8 | 1 | 6 | 0.223460 | 5.157231 | 0.797327 | 3.303789 |
+| Monthly (from daily data, augmentation) |  |  |  |  | | | |
 
 - ARIMA
 
