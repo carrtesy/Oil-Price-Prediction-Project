@@ -8,53 +8,63 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     """model training"""
     log = open('./log.txt', 'w')
 
+    """
+        Initializaition
+    """
     #initial model parameter
+
     m = 0 # kernelnumber
     kernelMeans = None
     kernelSigma = None
     kernelWeights = None
+    initial_PSI = None
     invPSI = None
 
     #initial kernel recruiting
 
-    #첫번쨰 커널, 두번째 커널: y값이 가장 큰 index와 가장 작은 index
+    # first / second kernel: indexes of maximum, minimum y
+    m += 2 # adding two kernels
+
+    # max
     idx1 = np.argmax(trY)
     x1 = trX[idx1]
     y1 = trY[idx1]
     e1 = y1
 
+    # min
     idx2 = np.argmin(trY)
     x2 = trX[idx2]
     y2 = trY[idx2]
     e2 = y2
 
-    m += 2
+    # kernel weights, means, sigma
     kernelWeights = np.array([e1, e2])
     kernelMeans = np.array([x1, x2])
-
-    dist = np.sqrt(np.sum(np.square(x1-x2))) #x1,x2사이 거리
+    dist = np.sqrt(np.sum(np.square(x1-x2))) # distance between x1, x2
     sig1, sig2 = alpha*dist, alpha*dist
     kernelSigma = np.array([sig1, sig2])
-    initial_PSI = None
-    initial_PSI = np.ndarray(shape=(2,2))
-    initial_PSI[0][0] = ft.GaussianKernel(x1,kernelMeans[0],sig1)
-    initial_PSI[0][1] = ft.GaussianKernel(x1,kernelMeans[1],sig2)
-    initial_PSI[1][0] = ft.GaussianKernel(x2,kernelMeans[0],sig1)
-    initial_PSI[1][1] = ft.GaussianKernel(x2,kernelMeans[1],sig2)
 
+    # initial_PSI
+    initial_PSI = np.ndarray(shape=(2, 2))
+    initial_PSI[0][0] = ft.GaussianKernel(x1, kernelMeans[0], sig1)
+    initial_PSI[0][1] = ft.GaussianKernel(x1, kernelMeans[1], sig2)
+    initial_PSI[1][0] = ft.GaussianKernel(x2, kernelMeans[0], sig1)
+    initial_PSI[1][1] = ft.GaussianKernel(x2, kernelMeans[1], sig2)
+
+    # kernel weights
     invPSI = lin.inv(initial_PSI)
     init_y = np.array([y1,y2])
     kernelWeights = np.matmul(invPSI, init_y)
 
-    #Phase 1
+    """
+        Phase 1
+    """
     estv = ft.EstimatedNoiseVariance(trY)
-    # print(np.sqrt(estv))
 
     trainerr = []
     validerr = []
 
-
-    # 커널 수를 늘려가며 학습을 합니다.
+    # training with increasing kernel numbers
     while(True):
         err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
         terr, trmse, trsq, trmae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
@@ -77,21 +87,22 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
 
         m, kernelMeans, kernelSigma, kernelWeights, invPSI = ft.Phase1(x, y, e, m, alpha, kernelMeans, kernelSigma, kernelWeights, invPSI)
 
-
-    ## 커널수에 따른 에러
+    # Plot error graph according to kernel numbers
     confintmax, confintmin = ft.EstimatedNoiseVariance(trY)
-    print(confintmax)
-    print(confintmin)
-    plt.plot(trainerr,'r')
-    plt.plot(validerr,'b')
+    print(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax))
+    log.write(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax) + '\n')
+    plt.plot(trainerr, 'r')
+    plt.plot(validerr, 'b')
     plt.legend(["Training Error", "Validation Error"])
-    plt.xticks(np.arange(0,100,5))#x축 눈금
+    plt.xticks(np.arange(0, 100, 5))
     plt.savefig('./plot.png')
     plt.show()
 
-    log.write(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax) + '\n')
-
-    # 커널 몇개를 할것인가?
+    '''
+        phase 2 & phase 3
+        learning kernel parameter
+    '''
+    # Choose Kernel number here
     #m = 45 # daily
     #m = 28 # weekly
     #m= 30 #weekly_tau1
@@ -102,12 +113,13 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     #m = 28 # monthly from weekly data
     #m = 15 # weekly_data+, monthly_data+
 
+    # init
     kernelMeans = kernelMeans[:m]
     kernelSigma = kernelSigma[:m]
     kernelWeights = kernelWeights[:m]
 
-    #Phase 2 & Phase3 : kernel parameter 학습
     for i in range(loop):
+        # phase 2
         B = None
         B = np.identity(m)
 
@@ -123,6 +135,7 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
 
             B, kernelSigma = ft.Phase2(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights)
 
+        # phase 3
         B = None
         B = np.identity(m)
 
