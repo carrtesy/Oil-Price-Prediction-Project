@@ -29,6 +29,7 @@ Hyperparameter settings
 
 
 Model Performance
+
 | Model  | (P, D, Q) | RMSE | R Square |  MAE |
 |---|:---:|:---:|:---:|:---:|
 | Daily | (5,1,3) | 2.569438 | 0.949691 | 0.9889141 |
