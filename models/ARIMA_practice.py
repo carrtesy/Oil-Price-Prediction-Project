@@ -10,8 +10,8 @@ import numpy as np
 warnings.filterwarnings("ignore")
 
 #mode = "daily"
-mode = "weekly"
-#mode = "monthly"
+#mode = "weekly"
+mode = "monthly"
 
 dailyfile = open('./daily/wti.csv', 'r')
 weeklyfile = open('./weekly/wti_week.csv', 'r')
@@ -50,7 +50,7 @@ elif(mode == "weekly"): # Weekly_original
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
     data = readData(monthlyfile, '1960-01-01', '2020-08-01')
-
+'''
 # hyperparmeters
 test_ratio = 0.2
 ARIMA_order = (3,1,3)
@@ -93,3 +93,9 @@ df2 = pd.DataFrame()
 df2["Estimate"] = pd.Series(fc_series)
 df2["Value"] = pd.Series(test)
 df2.to_csv("weekly_ARIMA.csv", index=False)
+'''
+plt.figure(figsize=(12,5), dpi=100)
+plt.plot(data, label='dataset')
+plt.title('WTI oil price_monthly')
+plt.savefig("oilprice.png")
+plt.show()

@@ -104,9 +104,9 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     '''
     # Choose Kernel number here
     #m = 16 # daily*
-    #m = 23 # weekly1*
+    m = 23 # weekly1*
     #m = 62 # weekly2*
-    m = 7 # monthly from monthly data
+    #m = 7 # monthly from monthly data
     #m= 30 #weekly_tau1
     #m = 73 #monthly_from_weekly_using_tau1
     #m = 8  # monthly_from_weekly fixed p =4
@@ -157,16 +157,17 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     return m, kernelMeans, kernelSigma, kernelWeights
 
 def updateWeights(X, y, num_kernels, kernelMeans, kernelSigma, kernelWeights, loop):
-    #for i in range(loop):
+    for i in range(loop):
     # phase 2
-    B = np.identity(num_kernels)
-    e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
-    B, kernelSigma = ft.Phase2(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+        B = np.identity(num_kernels)
+        e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+        B, kernelSigma = ft.Phase2(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+
 
     # phase 3
-    B = np.identity(num_kernels)
-    e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
-    B, kernelWeights = ft.Phase3(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+        B = np.identity(num_kernels)
+        e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+        B, kernelWeights = ft.Phase3(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
 
     return kernelMeans, kernelSigma, kernelWeights
 

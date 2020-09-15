@@ -68,11 +68,11 @@ teY = dataY[-test_size:]
 
 # parameter
 alpha = 0.5
-loop = 5
+loop = 50
 Kernel_Num = 100
 
 # train or load model
-ON_TRAIN = False
+ON_TRAIN = True
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters

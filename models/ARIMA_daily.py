@@ -103,8 +103,12 @@ for ma in range(1, ARIMA_order[2]+1):
 
 df.to_csv(filename + ".csv", index=False)
 
-plt.plot(test, 'r')
-plt.plot(predictions, 'b')
+test = pd.Series(test, index=range(len(data)-test_size, len(data)))
+predictions = pd.Series(predictions, index=range(len(data)-test_size, len(data)))
+plt.figure(figsize=(12,5), dpi=100)
+plt.plot(train, label='training')
+plt.plot(test, label='actual', color='r')
+plt.plot(predictions, label='forecast', color = 'r')
 plt.legend(["Test Data", "Prediction"])
 plt.savefig(filename + ".png")
 plt.show()
