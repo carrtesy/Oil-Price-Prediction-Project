@@ -2,7 +2,7 @@
 
 ## List
 - [dataset][dataset]
-- [model][model]
+- [models][models]
 
 ## Dependency
 - python 3.8.1
@@ -10,4 +10,4 @@
 - matplotlib 3.1.3
 
 [dataset]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/data_representations
-[model]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/model
+[models]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/tree/master/models
