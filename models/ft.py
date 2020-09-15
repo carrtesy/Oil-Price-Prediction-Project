@@ -280,7 +280,7 @@ def Phase2(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights) :
     return B, kernelSigma
     
 def Phase3(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights):
-    h = np.zeros(shape = (m,1))
+    h = np.zeros(shape = (m, 1))
     
     for i in range(m):
         ko = GaussianKernel(x, kernelMeans[i], kernelSigma[i])
@@ -291,9 +291,7 @@ def Phase3(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights):
     
     return B, kernelWeights
 
-
-#Smootheness Measure
-       
+# Smootheness Measure
 def Dist(x1, x2, E):
     dist = 0
     for i in range(0, E):

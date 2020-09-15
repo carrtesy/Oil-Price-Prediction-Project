@@ -156,6 +156,20 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     log.close()
     return m, kernelMeans, kernelSigma, kernelWeights
 
+def updateWeights(X, y, num_kernels, kernelMeans, kernelSigma, kernelWeights, loop):
+    #for i in range(loop):
+    # phase 2
+    B = np.identity(num_kernels)
+    e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+    B, kernelSigma = ft.Phase2(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+
+    # phase 3
+    B = np.identity(num_kernels)
+    e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+    B, kernelWeights = ft.Phase3(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+
+    return kernelMeans, kernelSigma, kernelWeights
+
 def predict(X, kernelMeans, kernelSigma, kernelWeights):
     n = len(X)
     Yest = []
@@ -163,13 +177,50 @@ def predict(X, kernelMeans, kernelSigma, kernelWeights):
         Yest.append(ft.output(X[i], kernelMeans, kernelSigma, kernelWeights))
     return Yest
 
+def rolling_forecast(teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeights, loop):
+    """
+    model test, rolling forecast
+    """
+
+    # forecast and update
+    n = len(teX)
+    Yest = []
+
+    for i in range(n):
+        # forecast
+        Yhat = ft.output(teX[i], kernelMeans, kernelSigma, kernelWeights)
+        Yest.append(Yhat)
+        # update
+        kernelMeans, kernelSigma, kernelWeights = \
+            updateWeights(teX[i], teY[i],
+                          num_kernels,
+                          kernelMeans, kernelSigma, kernelWeights,
+                          loop)
+
+    # evaluate
+    f = open('./result.txt', 'w')
+    err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Yest)
+    print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
+    f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
+
+    # plot
+    pre = teY - err
+    plt.plot(teY, 'r')
+    plt.plot(pre, 'b')
+    plt.legend(["Test Data", "Prediction"])
+    plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
+    plt.show()
+
+    f.close()
+    return rmse, rsq, mae
+
 def evaluate(data, teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeights):
     """model test"""
     print("== EVALUATE ==")
     f = open('./result.txt', 'w')
 
     err, rmse, rsq, mae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
-    print(format('rmse: %f, R2: %f') % (rmse, rsq))
+    print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
 
     pre = teY - err
