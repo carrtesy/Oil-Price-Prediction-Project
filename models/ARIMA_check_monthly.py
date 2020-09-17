@@ -25,7 +25,7 @@ elif(mode == "weekly"): # Weekly_original
     data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
-    data = ft.readData(monthlyfile, '1960-01-01', '2020-08-01')
+    data = ft.readData(monthlyfile, '1986-01-01', '2020-08-01')
 
 # hyperparmeters
 test_ratio = 0.2
@@ -56,42 +56,12 @@ for d in range(2):
                 print(model_fit.aic)
             except:
                 pass
-# (1,0,0), (1,0,1) (1,0,2), (2,0,0), (4,0,0), (4,0,1), (1,1,0) (1,1,3), (3,1,1), (4,1,3)
+# (1,0,0) 2438 (1,0,1) 2384 (1,0,2) 2373 (2,0,0)2374 (2,0,3) 2370 (3,0,2) 2369 (4,0,1) 2369 (4,0,2) 2370
+# (1,1,0) 2363 (1,1,3) 2358
 
 # check AIC
-'''
-model = ARIMA(history, order=(1,0,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3874
-model = ARIMA(history, order=(1,0,1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3777
-model = ARIMA(history, order=(1,0,2))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3757
-model = ARIMA(history, order=(2,0,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3760
-model = ARIMA(history, order=(4,0,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3757
-model = ARIMA(history, order=(4,0,1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3749
-model = ARIMA(history, order=(1,1,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3751
-model = ARIMA(history, order=(1,1,3))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3749
-model = ARIMA(history, order=(3,1,1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3738
-model = ARIMA(history, order=(4,1,3))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #3720
-'''
-#(4,1,3)>(3,1,1)>(1,1,3)
+
+#(1,1,3)>(1,1,0)>(4,0,1)
 
 
 # constant ARIMA order check
@@ -107,31 +77,7 @@ for d in range(2):
                 print(model_fit.aic)
             except:
                 pass
-# (1,0,0), (1,0,1), (1,0,2), (2,0,0), (4,0,0), (4,0,1), (4,0,2)
+# (1,0,0) 2437 (1,0,1) 2382 (1,0,2) 2370 (2,0,0)2370 (2,0,3) 2370
+# (1,1,0) 2365 (1,1,3) 2360 (4,1,3) 2356
 
-#check AIC
-'''
-model = ARIMA(history, order=(1,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3873
-model = ARIMA(history, order=(1,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3776
-model = ARIMA(history, order=(1,0,2))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3756
-model = ARIMA(history, order=(2,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3758
-model = ARIMA(history, order=(4,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3756
-model = ARIMA(history, order=(4,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3749
-model = ARIMA(history, order=(4,0,2))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #3750
-
-'''
-#(4,0,1)
+#(4,1,3) > (1,1,3) > (1,1,0)

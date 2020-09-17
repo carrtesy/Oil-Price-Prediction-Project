@@ -20,7 +20,7 @@ dailyfile = open('./daily/wti.csv', 'r')
 
 if(mode == "daily"): # Daily
     print("===DAILY DATASET===")
-    data = ft.readData(dailyfile, '2000-01-03', '2020-08-30')
+    data = ft.readData(dailyfile, '1986-01-02', '2020-08-30')
 elif(mode == "weekly"): # Weekly_original
     print("===WEEKLY DATASET===")
     #data = ft.readData(weeklyfile, '1986-01-03', '2020-06-26')
@@ -49,7 +49,7 @@ predictions = list()
 print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
-    model_fit = model.fit(disp = 0, trend='nc')
+    model_fit = model.fit(disp = 0, trend='c')
     output = model_fit.forecast()
     yhat = output[0][0]
     predictions.append(yhat)
@@ -86,7 +86,7 @@ text = "rmse" + ":" + str(rmse) +  "\n" +\
             "mae" + ":" + str(mae) + "\n" +\
             "parameters :" + "\n"
 
-const = False #constant 유무
+const = True #constant 유무
 if const:
     st=1
     text = text + "constant:" + str(params[st]) + \
@@ -103,15 +103,23 @@ for ma in range(1, ARIMA_order[2]+1):
 
 df.to_csv(filename + ".csv", index=False)
 
+plt.plot(test, 'r')
+plt.plot(predictions, 'b')
+plt.legend(["Test Data", "Prediction"])
+plt.savefig(filename + ".png")
+plt.clf()
+
+
 test = pd.Series(test, index=range(len(data)-test_size, len(data)))
 predictions = pd.Series(predictions, index=range(len(data)-test_size, len(data)))
 plt.figure(figsize=(12,5), dpi=100)
 plt.plot(train, label='training')
 plt.plot(test, label='actual', color='r')
-plt.plot(predictions, label='forecast', color = 'r')
+plt.plot(predictions, label='prediction', color = 'b')
 plt.legend(["Test Data", "Prediction"])
-plt.savefig(filename + ".png")
-plt.show()
+plt.savefig(filename + "_all" + ".png")
+
+
 
 log = open(filename + "_result" + '.txt', 'w')
 log.write(text)

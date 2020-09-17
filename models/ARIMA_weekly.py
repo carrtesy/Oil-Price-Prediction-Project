@@ -10,7 +10,7 @@ import ft
 # ignore warnings
 warnings.filterwarnings("ignore")
 
-mode = "daily"
+#  mode = "daily"
 #mode = "weekly"
 #mode = "monthly_data+"
 
@@ -37,8 +37,8 @@ test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
 
-train, extra, test = data[:-test_size-4], data[-test_size-4:-4], data[-test_size:]
-#train, test = data[:-test_size], data[-test_size:]
+#train, extra, test = data[:-test_size-4], data[-test_size-4:-4], data[-test_size:]
+train, test = data[:-test_size], data[-test_size:]
 
 
 # evaluate models
@@ -51,10 +51,10 @@ print("=== TESTING ARIMA ==")
 for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
     model_fit = model.fit(disp = 0, trend='nc')
-    output = model_fit.forecast(steps=5)
-    yhat = output[0][4] #output[0][4]
+    output = model_fit.forecast()
+    yhat = output[0][0] #output[0][4]
     predictions.append(yhat)
-    obs = extra[t] #extra[t]
+    obs = test[t] #extra[t]
     history.append(obs)
 
     # Track the testing process
@@ -104,10 +104,22 @@ for ma in range(1, ARIMA_order[2]+1):
 
 df.to_csv(filename + ".csv", index=False)
 
+plt.figure(figsize=(12,5), dpi=100)
 plt.plot(test, 'r')
 plt.plot(predictions, 'b')
 plt.legend(["Test Data", "Prediction"])
 plt.savefig(filename + ".png")
+plt.clf()
+
+
+test = pd.Series(test, index=range(len(data)-test_size, len(data)))
+predictions = pd.Series(predictions, index=range(len(data)-test_size, len(data)))
+
+plt.plot(train, label='training')
+plt.plot(test, label='actual', color='r')
+plt.plot(predictions, label='prediction', color = 'b')
+plt.legend(["Test Data", "Prediction"])
+plt.savefig(filename + "_all" + ".png")
 plt.show()
 
 log = open(filename + "_result" + '.txt', 'w')

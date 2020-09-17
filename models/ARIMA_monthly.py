@@ -25,7 +25,7 @@ elif(mode == "weekly"): # Weekly_original
     data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
 elif(mode == "monthly"): # Monthly
     print("===MONTHLY DATASET===")
-    data = ft.readData(monthlyfile, '1960-01-01', '2020-08-01')
+    data = ft.readData(monthlyfile, '1986-01-01', '2020-08-01')
 
 # hyperparmeters
 test_ratio = 0.2
@@ -49,7 +49,7 @@ for t in range(len(test)):
     model = ARIMA(history, order = ARIMA_order)
     model_fit = model.fit(disp = 0, trend='nc')
     output = model_fit.forecast(steps=4)
-    yhat = output[0][3] #output[0][4]
+    yhat = output[0][3]
     predictions.append(yhat)
     obs = extra[t]
     history.append(obs)
@@ -101,10 +101,21 @@ for ma in range(1, ARIMA_order[2]+1):
 
 df.to_csv(filename + ".csv", index=False)
 
+plt.figure(figsize=(12,5), dpi=100)
 plt.plot(test, 'r')
 plt.plot(predictions, 'b')
 plt.legend(["Test Data", "Prediction"])
 plt.savefig(filename + ".png")
+plt.clf()
+
+
+test = pd.Series(test, index=range(len(data)-test_size, len(data)))
+predictions = pd.Series(predictions, index=range(len(data)-test_size, len(data)))
+plt.plot(train, label='training')
+plt.plot(test, label='actual', color='r')
+plt.plot(predictions, label='prediction', color = 'b')
+plt.legend(["Test Data", "Prediction"])
+plt.savefig(filename + "_all" + ".png")
 plt.show()
 
 log = open(filename + "_result" + '.txt', 'w')

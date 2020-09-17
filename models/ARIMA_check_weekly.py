@@ -36,7 +36,7 @@ test_size = int(len(data) * test_ratio)
 print("size of dataset:", len(data))
 print("size of test dataset:", test_size)
 
-train =data
+train = data
 
 # evaluate models
 history = [x for x in train]
@@ -107,7 +107,7 @@ model_fit = model.fit(disp=0, trend='nc')
 print(model_fit.aic) #7715
 #(3,1,3)>(4,1,3)>(3,1,2)
 '''
-'''
+
 # constant ARIMA order check
 print("----constant----")
 for d in range(2):
@@ -121,37 +121,7 @@ for d in range(2):
                 print(model_fit.aic)
             except:
                 pass
-# (1,0,0), (1,0,1), (2,0,0), (3,0,1), (4,0,0), (4,0,1), (4,0,2), (4,0,3), (5,0,2)
-'''
+# (1,0,0) 7808 (1,0,1) 7736 (2,0,0) 7736 (3,0,1) 7731 (4,0,0) 7735 (4,0,1) 7727 (4,0,2) 7731 (4,0,3) 7721 (5,0,2) 7724
+# (1,1,0) 7728 (2,1,1) 7726 (2,1,2) 7722 (3,1,1) 7721 (3,1,2) 7719 (3,1,3) 7716 (4,1,3) 7717
 
-#check AIC
-'''
-model = ARIMA(history, order=(1,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7808
-model = ARIMA(history, order=(1,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7736
-model = ARIMA(history, order=(2,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7736
-model = ARIMA(history, order=(3,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7731
-model = ARIMA(history, order=(4,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7735
-model = ARIMA(history, order=(4,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7727
-model = ARIMA(history, order=(4,0,2))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7731
-model = ARIMA(history, order=(4,0,3))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7721
-model = ARIMA(history, order=(5,0,2))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #7724
-'''
-#(4,0,3)
+# (3,1,3) > (4,1,3) > (3,1,2) > (4,0,3)

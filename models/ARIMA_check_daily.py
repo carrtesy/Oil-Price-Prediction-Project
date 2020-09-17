@@ -19,7 +19,7 @@ weeklyfile = open('./weekly/wti_week.csv', 'r')
 
 if(mode == "daily"): # Daily
     print("===DAILY DATASET===")
-    data = ft.readData(dailyfile, '2000-01-03', '2020-08-30')
+    data = ft.readData(dailyfile, '1986-01-02', '2020-08-30')
 elif(mode == "weekly"): # Weekly_original
     print("===WEEKLY DATASET===")
     data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
@@ -42,9 +42,9 @@ train = data
 history = [x for x in train]
 
 predictions = list()
-'''
-# no constant ARIMA order check
 
+# no constant ARIMA order check
+'''
 for d in range(2):
     for i in range(1,8):
         for j in range(4):
@@ -56,60 +56,15 @@ for d in range(2):
                 print(model_fit.aic)
             except:
                 pass
-# (1,0,0) (1,0,1) (2,0,0) (2,0,1) (2,0,2) (2,0,3) (3,0,0) (3,0,2) (4,0,1) (7,0,3) (1,1,0) (2,1,0) (3,1,1) (3,1,3) (5,1,3)
-'''
-# check AIC
-'''
-model = ARIMA(history, order=(1,0,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20596
-model = ARIMA(history, order=(1,0,1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20431
-model = ARIMA(history, order=(2,0,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20443
-model = ARIMA(history, order=(2, 0, 1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic)  # 20431
-model = ARIMA(history, order=(2, 0, 2))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic)  # 20432
-model = ARIMA(history, order=(2,0,3))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20433
-model = ARIMA(history, order=(3,0,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20430
-model = ARIMA(history, order=(3,0,2))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20433
-model = ARIMA(history, order=(4,0,1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20428
-model = ARIMA(history, order=(7,0,3))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20429
-model = ARIMA(history, order=(1,1,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20432
-model = ARIMA(history, order=(2,1,0))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20418
-model = ARIMA(history, order=(3,1,1))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20416
-model = ARIMA(history, order=(3,1,3))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20423
-model = ARIMA(history, order=(5,1,3))
-model_fit = model.fit(disp=0, trend='nc')
-print(model_fit.aic) #20414
-'''
+# (1,0,0) 30667 (1,0,1) 30417 (1,0,2) 30414 (2,0,0) 30437 (2,0,1) 30415 (2,0,2) 30416 (2,0,3) 30409
+# (3,0,0) 30415 (3,0,2) 30418 (4,0,1) 30410 (7,0,3) 30406 (1,1,0) 30426 (1,1,1) 30404 (1,1,3) 30399
+# (2,1,0) 30404 (3,1,1) 30399 (5,1,3) 30386 (6,1,3) 30395
 
-#(5,1,3)>(3,1,1)>(2,1,0)
+#(6,1,3)>(5,1,3)>(1,1,3)
 
 '''
+
+
 # constant ARIMA order check
 print("-----constant-----")
 for d in range(2):
@@ -123,29 +78,7 @@ for d in range(2):
                 print(model_fit.aic)
             except:
                 pass
-# (1,0,0), (1,0,1), (2,0,0), (2,0,3), (3,0,0), (4,0,1)
-'''
+# (1,0,0) 30644 (1,0,1) 30416 (1,0,2) 30413 (2,0,0) 30435 (2,0,1) 30413 (2,0,3) 30406 (3,0,0) 30413 (4,0,1) 30409
+# (1,1,0) 30428 (1,1,3) 30401 (2,1,0) 30406 (3,1,1) 30401 (4,1,1) 30403 (5,1,3) 30388 (6,1,3) 30397
 
-
-#check AIC
-'''
-model = ARIMA(history, order=(1,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #20592
-model = ARIMA(history, order=(1,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #20428
-model = ARIMA(history, order=(2,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #20441
-model = ARIMA(history, order=(2,0,3))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #20424
-model = ARIMA(history, order=(3,0,0))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #20427
-model = ARIMA(history, order=(4,0,1))
-model_fit = model.fit(disp=0, trend='c')
-print(model_fit.aic) #20426
-'''
-#(2,0,3)
+# (5,1,3) > (6,1,3) > (3,1,1) > (4,1,1)
