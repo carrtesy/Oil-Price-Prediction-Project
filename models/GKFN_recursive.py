@@ -298,7 +298,6 @@ def evaluate(data, teX, teY, teYdate, index_arr,
     pre = teY - err
     plt.plot(dates, teY, 'r')
     plt.plot(dates, pre, 'b')
-    plt.xticks(rotation = 90)
     plt.legend(["Test Data", "Prediction"])
     plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
     plt.show()
