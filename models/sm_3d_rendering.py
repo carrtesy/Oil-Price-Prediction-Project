@@ -4,7 +4,7 @@ import numpy as np
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-smfile = open('test.txt', 'r')
+smfile = open('sm.txt', 'r')
 
 E = []
 tau = []
@@ -35,5 +35,3 @@ ax.view_init(elev = 36, azim = -135)
 
 plt.savefig("sm_3d.png")
 plt.show()
-
-

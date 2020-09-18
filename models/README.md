@@ -1,7 +1,19 @@
 # Oil Price Prediction Project
 ## New Version
 
-## Models to evaluate
+### Smoothness Measure
+- daily
+    
+    ![daily](./daily/sm_3d.png)
+- weekly
+
+    ![weekly](./weekly/sm_3d.png)
+- monthly
+    
+    ![monthly](./monthly/sm_3d.png)
+        
+
+### Models to evaluate
 
 -  GKFN
 
