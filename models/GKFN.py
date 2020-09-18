@@ -2,7 +2,8 @@ import numpy as np
 import numpy.linalg as lin
 import ft as ft
 import matplotlib.pyplot as plt
-import copy
+import matplotlib.dates as mdates
+import datetime
 
 def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     """model training"""
@@ -215,8 +216,14 @@ def rolling_forecast(teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeig
     f.close()
     return rmse, rsq, mae
 
-def evaluate(data, teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeights):
-    """model test"""
+def evaluate(teX, teY,
+             teYdate,
+             num_kernels,
+             kernelMeans, kernelSigma, kernelWeights,
+             formatter, locater):
+    """
+        model test
+    """
     print("== EVALUATE ==")
     f = open('./result.txt', 'w')
 
@@ -224,9 +231,17 @@ def evaluate(data, teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeight
     print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
 
+    """
+        plot
+    """
+    dates = [datetime.datetime.strptime(d, "%Y-%m-%d").date() for d in teYdate]
+    plt.gca().xaxis.set_major_formatter(formatter)
+    plt.gca().xaxis.set_major_locator(locater)
+
     pre = teY - err
-    plt.plot(teY, 'r')
-    plt.plot(pre, 'b')
+    plt.plot(dates, teY, 'r')
+    plt.plot(dates, pre, 'b')
+    plt.xticks(rotation = 90)
     plt.legend(["Test Data", "Prediction"])
     plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
     plt.show()

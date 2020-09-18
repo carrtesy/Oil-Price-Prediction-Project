@@ -4,7 +4,9 @@ import csv
 
 def readData(inputfile, startdate, enddate):
     print("Reading dataset: [", startdate, ' ~ ' , enddate , "]")
+
     data = []
+    dates = []
     f = inputfile
     csvReader = csv.reader(f, delimiter = ",")
     start = 0
@@ -16,21 +18,20 @@ def readData(inputfile, startdate, enddate):
             else:
                 print("start date checked: ", i[0])
                 start = 1
-        temp = []
 
         # get inputs
         if(i[1] == ''):
             continue
         else:
-            temp.append(i[1])
-            data.append(float(temp[0]))
+            data.append(float(i[1]))
+            dates.append(i[0])
 
         # check end date
         if(i[0] == enddate):
             print("end date checked: ", i[0])
             break
     f.close()
-    return data
+    return dates, data
 
 def smoothnessMeasure(data, mode) :
     # Smoothness Measure
@@ -39,7 +40,7 @@ def smoothnessMeasure(data, mode) :
     SM_list = []
     f = open('sm.txt', 'w')
     #if (mode =="daily"):
-    if False:
+    if True:
         for tau in range(1, 10):
             for E in range(2, 13):
                 temp = []
@@ -65,11 +66,12 @@ def smoothnessMeasure(data, mode) :
     f.close()
 
 
-def extracting(tau, E, P, obj, mode):
+def extracting(tau, E, P, obj, dates, mode):
     '''if the mode is weekly_data+ or monthly_data+, we use the daily data, extracting by 5 days or 20 days in sequence'''
 
     input = []
     output = []
+    output_dates = []
     index = []
 
     if mode == "weekly_data+":
@@ -81,6 +83,7 @@ def extracting(tau, E, P, obj, mode):
             input.append(b)
             output.append(obj[i+5*P])
             index.append(i+5*P)
+            output_dates.append(dates[i+5*P])
     elif mode == "monthly_data+":
         a = tau * (E-1)*20
         for i in range(a, len(obj)-20*P):
@@ -90,6 +93,7 @@ def extracting(tau, E, P, obj, mode):
             input.append(b)
             output.append(obj[i+20*P])
             index.append(i+20*P)
+            output_dates.append(dates[i+20*P])
     else:
         a = tau * (E-1)
         for i in range(a, len(obj)-P):
@@ -99,8 +103,9 @@ def extracting(tau, E, P, obj, mode):
             input.append(b)
             output.append(obj[i+P])
             index.append(i+P)
+            output_dates.append(dates[i+P])
 
-    return np.array(input), np.array(output), np.array(index)
+    return np.array(input), np.array(output), np.array(index), np.array(output_dates)
 
 def extracting_on_index(tau, E, P, obj, index, mode):
     input = []
