@@ -68,6 +68,7 @@ def get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd):
     validerr = []
 
     # training with increasing kernel numbers
+    print(" ")
     while(True):
         if m > kernel_num_bdd:
             break
@@ -75,7 +76,7 @@ def get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd):
         err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
         terr, trmse, trsq, trmae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
         log.write(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f\n') % (m, rmse, rsq, m, trmse, trsq))
-        print(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f\n') % (m, rmse, rsq, m, trmse, trsq))
+        print(".", end = "")
         trainerr.append(rmse)
         validerr.append(trmse)
         kernelnums.append(m)
@@ -277,7 +278,7 @@ def evaluate(teX, teY,
     pre = teY - err
     plt.plot(dates, teY, 'r')
     plt.plot(dates, pre, 'b')
-    plt.xticks(rotation = 90)
+    #plt.xticks(rotation = 90)
     plt.legend(["Test Data", "Prediction"])
     plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
     plt.show()
