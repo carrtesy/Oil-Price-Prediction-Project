@@ -2,9 +2,12 @@ import numpy as np
 import numpy.linalg as lin
 import ft as ft
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import datetime
+import sys
 import copy
 
-def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
+def get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd):
     """model training"""
     log = open('./log.txt', 'w')
 
@@ -53,28 +56,30 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
 
     # kernel weights
     invPSI = lin.inv(initial_PSI)
-    init_y = np.array([y1,y2])
-    kernelWeights = np.matmul(invPSI, init_y)
+    init_y = np.array([y1, y2])
+    kernelWeights = np.matmul(invPSI, init_y) # kernelWeights = PSI^-1 * init_y
 
     """
         Phase 1
     """
     estv = ft.EstimatedNoiseVariance(trY)
 
+    kernelnums = []
     trainerr = []
     validerr = []
 
     # training with increasing kernel numbers
     while(True):
+        if m > kernel_num_bdd:
+            break
+
         err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
         terr, trmse, trsq, trmae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
         log.write(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f\n') % (m, rmse, rsq, m, trmse, trsq))
         print(format('train: Phase1 : m = %d, rmse = %f, rsq = %f \nvalidation Phase1 : m = %d, rmse = %f, rsq = %f\n') % (m, rmse, rsq, m, trmse, trsq))
         trainerr.append(rmse)
         validerr.append(trmse)
-
-        if m > Kernel_Num:
-            break
+        kernelnums.append(m)
 
         if m % 10 == 0:
             print(m)
@@ -91,37 +96,44 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
     confintmax, confintmin = ft.EstimatedNoiseVariance(trY)
     print(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax))
     log.write(format("Confidence Interval: [%f, %f]") % (confintmin, confintmax) + '\n')
-    plt.plot(trainerr, 'r')
-    plt.plot(validerr, 'b')
+    plt.plot(kernelnums, trainerr, 'r')
+    plt.plot(kernelnums, validerr, 'b')
     plt.legend(["Training Error", "Validation Error"])
     plt.xticks(np.arange(0, 100, 5))
     plt.savefig('./plot.png')
     plt.show()
 
+    # return kernel with minimum validation error, and other kernel parameters
+    print("Kernel number that minimizes validerr: {}".format(kernelnums[np.argmin(validerr)]))
+    return kernelnums[np.argmin(validerr)], kernelMeans, kernelSigma, kernelWeights
+
+def train(trX, trY, teX, teY,
+          epochs, num_kernels,
+          kernelMeans, kernelSigma, kernelWeights):
+    """model training"""
+    log = open('./log.txt', 'w')
     '''
         phase 2 & phase 3
         learning kernel parameter
     '''
-    # Choose Kernel number here
-    #m = 45 # daily
-    #m = 28 # weekly
-    #m= 30 #weekly_tau1
-    m = 35 #monthly_from_weekly_using_tau1
-    #m = 8  # monthly_from_weekly fixed p =4
-    #m = 8 #monthly_from_weekly_using_tau1 fixed p =4
-    #m = 28  # monthly from monthly data
-    #m = 28 # monthly from weekly data
-    #m = 15 # weekly_data+, monthly_data+
 
     # init
-    kernelMeans = kernelMeans[:m]
-    kernelSigma = kernelSigma[:m]
-    kernelWeights = kernelWeights[:m]
+    kernelMeans = kernelMeans[:num_kernels]
+    kernelSigma = kernelSigma[:num_kernels]
+    kernelWeights = kernelWeights[:num_kernels]
 
-    for i in range(loop):
+    epochs_arr = []
+    training_err = []
+    testing_err = []
+    min_err = sys.float_info.max
+    best_kernelMeans = None
+    best_kernelSigma = None
+    best_kernelWeights = None
+    best_epoch = None
+
+    for epoch in range(1, epochs+1):
         # phase 2
-        B = None
-        B = np.identity(m)
+        B = np.identity(num_kernels)
 
         for i in range(len(trX)):
             x = trX[i]
@@ -131,13 +143,11 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
             if i % 100 == 0 :
                 err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
                 log.write(format('Phase 2 step rmse = %f, rsq = %f\n') % (rmse, rsq))
-                print(format('Phase 2 step rmse = %f, rsq = %f') % (rmse, rsq))
 
-            B, kernelSigma = ft.Phase2(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights)
+            B, kernelSigma = ft.Phase2(x, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
 
         # phase 3
-        B = None
-        B = np.identity(m)
+        B = np.identity(num_kernels)
 
         for i in range(len(trX)):
             x = trX[i]
@@ -147,12 +157,92 @@ def train(trX, trY, teX, teY, alpha, loop, Kernel_Num) :
             if i % 100 == 0:
                 err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
                 log.write(format('Phase 3 step rmse = %f, rsq = %f\n') % (rmse, rsq))
-                print(format('Phase 3 step rmse = %f, rsq = %f') % (rmse, rsq))
 
-            B, kernelWeights = ft.Phase3(x, y, e, m, B, kernelMeans, kernelSigma, kernelWeights)
+            B, kernelWeights = ft.Phase3(x, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+
+        # check current epoch
+        err, rmse, rsq, mae = ft.loss(trX, trY, kernelMeans, kernelSigma, kernelWeights)
+        terr, trmse, trsq, trmae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
+        training_err.append(rmse)
+        testing_err.append(trmse)
+        epochs_arr.append(epoch)
+        print("EPOCH {}: training err {}, test err {}".format(epoch, rmse, trmse))
+
+        # update kernel if it is best
+        if(trmse < min_err):
+            max_rsq = trmse
+            best_epoch = epoch
+            best_kernelMeans = kernelMeans
+            best_kernelSigma = kernelSigma
+            best_kernelWeights = kernelWeights
+
+    print("EPOCH {} selected.".format(best_epoch))
+    plt.plot(epochs_arr, testing_err, 'b')
+    plt.legend(["Testing Error(RMSE)"])
+    plt.savefig("./kernel" + str(num_kernels) + "_training_graph.png")
+    plt.show()
 
     log.close()
-    return m, kernelMeans, kernelSigma, kernelWeights
+    return num_kernels, best_kernelMeans, best_kernelSigma, best_kernelWeights
+
+def updateWeights(X, y, num_kernels, kernelMeans, kernelSigma, kernelWeights, loop):
+    for i in range(loop):
+    # phase 2
+        B = np.identity(num_kernels)
+        e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+        B, kernelSigma = ft.Phase2(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+
+
+    # phase 3
+        B = np.identity(num_kernels)
+        e = y - ft.output(X, kernelMeans, kernelSigma, kernelWeights)
+        B, kernelWeights = ft.Phase3(X, y, e, num_kernels, B, kernelMeans, kernelSigma, kernelWeights)
+
+    return kernelMeans, kernelSigma, kernelWeights
+
+def predict(X, kernelMeans, kernelSigma, kernelWeights):
+    n = len(X)
+    Yest = []
+    for i in range(n):
+        Yest.append(ft.output(X[i], kernelMeans, kernelSigma, kernelWeights))
+    return Yest
+
+def rolling_forecast(teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeights, loop):
+    """
+    model test, rolling forecast
+    """
+
+    # forecast and update
+    n = len(teX)
+    Yest = []
+
+    for i in range(n):
+        # forecast
+        Yhat = ft.output(teX[i], kernelMeans, kernelSigma, kernelWeights)
+        Yest.append(Yhat)
+        # update
+        kernelMeans, kernelSigma, kernelWeights = \
+            updateWeights(teX[i], teY[i],
+                          num_kernels,
+                          kernelMeans, kernelSigma, kernelWeights,
+                          loop)
+
+    # evaluate
+    f = open('./result.txt', 'w')
+    err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Yest)
+    print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
+    f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
+
+    # plot
+    pre = teY - err
+    plt.plot(teY, 'r')
+    plt.plot(pre, 'b')
+    plt.legend(["Test Data", "Prediction"])
+    plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
+    plt.show()
+
+    f.close()
+    return rmse, rsq, mae
 
 def predict(X, kernelMeans, kernelSigma, kernelWeights):
     # vector prediction
@@ -167,7 +257,11 @@ def predict(X, kernelMeans, kernelSigma, kernelWeights):
     else:
         return ft.output(X, kernelMeans, kernelSigma, kernelWeights)
 
-def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, kernelWeights, tau, E, original_P, target_P, mode):
+def evaluate(data, teX, teY, teYdate, index_arr,
+             num_kernels, kernelMeans, kernelSigma, kernelWeights,
+             tau, E, original_P, target_P, mode,
+             formatter, locater
+             ):
     """model test"""
     print("== EVALUATE ==")
     f = open('./result.txt', 'w')
@@ -194,9 +288,17 @@ def evaluate(data, teX, teY, index_arr, num_kernels, kernelMeans, kernelSigma, k
     print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
 
+    """
+        plot
+    """
+    dates = [datetime.datetime.strptime(d, "%Y-%m-%d").date() for d in teYdate]
+    plt.gca().xaxis.set_major_formatter(formatter)
+    plt.gca().xaxis.set_major_locator(locater)
+
     pre = teY - err
-    plt.plot(teY, 'r')
-    plt.plot(pre, 'b')
+    plt.plot(dates, teY, 'r')
+    plt.plot(dates, pre, 'b')
+    plt.xticks(rotation = 90)
     plt.legend(["Test Data", "Prediction"])
     plt.savefig("./kernel" + str(num_kernels) + "_prediction_graph.png")
     plt.show()

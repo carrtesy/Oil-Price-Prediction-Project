@@ -3,11 +3,11 @@ import ft
 print("=== Smoothness Measure ===")
 
 """Data Load"""
-mode = "daily"
+#mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_tau1_for_monthly"
-#mode = "monthly"
+mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
 print("Loading dataset, mode: ", mode)
@@ -42,6 +42,6 @@ elif(mode == "monthly_data+"): # weekly_data+
 Smoothness Measure
 Creates sm.txt
 """
-print("=== Calculate Smoothness Measure ===")
+print("=== Calculating Smoothness Measure ===")
 ft.smoothnessMeasure(data, mode)
 print("Finished")

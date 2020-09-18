@@ -8,10 +8,10 @@ from dateutil.rrule import FR
 import data
 '''
 #mode = "daily"
-mode = "weekly_origin"
+#mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_tau1_for_monthly"
-#mode = "monthly"
+mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
 
@@ -82,15 +82,23 @@ train
 '''
 # parameter
 alpha = 0.5
-loop = 5
-Kernel_Num = 100
+EPOCHS = 25
+MAX_KERNEL = 100
 
 # train or load model
-ON_TRAIN = False
+ON_TRAIN = True
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters
-    num_kernels, kernelMeans, kernelSigma, kernelWeights = GKFN.train(trX, trY, teX, teY, alpha, loop, Kernel_Num)
+    print("=== Phase 1: setting kernel numbers ===")
+    m, kernelMeans, kernelSigma, kernelWeights = GKFN.get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd= MAX_KERNEL)
+
+    print("=== Phase 2 & 3: training ===")
+    num_kernels, kernelMeans, kernelSigma, kernelWeights =\
+        GKFN.train(trX, trY, teX, teY,
+                epochs = EPOCHS, num_kernels= m,
+                kernelMeans = kernelMeans, kernelSigma=kernelSigma, kernelWeights=kernelWeights
+                )
     print("Saving model at file : {}".format(model_name))
     with open(model_name, 'wb') as f:
         pickle.dump([num_kernels, kernelMeans, kernelSigma, kernelWeights], f)
