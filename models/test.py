@@ -7,8 +7,8 @@ from dateutil.rrule import FR
 '''
 import data
 '''
-#mode = "daily"
-mode = "weekly_origin"
+mode = "daily"
+#mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_tau1_for_monthly"
 #mode = "monthly"
@@ -114,8 +114,8 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-#locater = mdates.DayLocator(interval = 720) # for daily data
-locater = mdates.WeekdayLocator(byweekday = FR, interval = 104) # weekly
+locater = mdates.DayLocator(interval = 720) # for daily data
+#locater = mdates.WeekdayLocator(byweekday = FR, interval = 104) # weekly
 #locater = mdates.MonthLocator(bymonthday = 1, interval = 24) # monthly
 
 rmse, rsq, mae = GKFN.evaluate(teX, teY,
