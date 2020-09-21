@@ -33,10 +33,10 @@ def readData(inputfile, startdate, enddate):
     f.close()
     return dates, data
 
-def smoothnessMeasure(data, mode) :
+def smoothnessMeasure(data, dates, mode) :
     # Smoothness Measure
     #P = 1 # normal
-    P = 1 # for weekly -> monthly
+    P = 4 # for weekly -> monthly
     SM_list = []
     f = open('sm.txt', 'w')
     #if (mode =="daily"):
@@ -44,7 +44,7 @@ def smoothnessMeasure(data, mode) :
         for tau in range(1, 10):
             for E in range(2, 13):
                 temp = []
-                a1, a2, _ = extracting(tau, E, P, data, mode)
+                a1, a2, _, _ = extracting(tau, E, P, data, dates, mode)
                 sm = SM(a1, a2, E)
                 temp.append(tau)
                 temp.append(E)
@@ -55,7 +55,7 @@ def smoothnessMeasure(data, mode) :
     else:
         for E in range(2, 11):
             temp=[]
-            a1, a2, _ = extracting(1, E, P, data, mode)
+            a1, a2, _, _ = extracting(1, E, P, data, dates, mode)
             sm = SM(a1, a2, E)
             temp.append(1)
             temp.append(E)
