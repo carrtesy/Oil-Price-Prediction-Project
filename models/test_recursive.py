@@ -127,9 +127,9 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-locater = mdates.DayLocator(interval = 180) # for daily data
-#locater = mdates.WeekdayLocator(byweekday = FR, interval = 26) # weekly
-#locater = mdates.MonthLocator(bymonthday = 1, interval = 6) # monthly
+locater = mdates.DayLocator(interval = 720) # for daily data
+#locater = mdates.WeekdayLocator(byweekday = FR, interval = 102) # weekly
+#locater = mdates.MonthLocator(bymonthday = 1, interval = 24) # monthly
 
 rmse, rsq, mae = GKFN_recursive.evaluate(data, teX, teY, teYdate, te_index,
                                num_kernels, kernelMeans, kernelSigma, kernelWeights,

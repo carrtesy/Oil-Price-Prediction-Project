@@ -122,10 +122,11 @@ def train(trX, trY, teX, teY,
     kernelSigma = kernelSigma[:num_kernels]
     kernelWeights = kernelWeights[:num_kernels]
 
+    # history
     epochs_arr = []
     training_err = []
     testing_err = []
-    min_err = sys.float_info.max
+    max_rsq = 0
     best_kernelMeans = None
     best_kernelSigma = None
     best_kernelWeights = None
@@ -169,8 +170,9 @@ def train(trX, trY, teX, teY,
         print("EPOCH {}: training err {}, test err {}".format(epoch, rmse, trmse))
 
         # update kernel if it is best
-        if(trmse < min_err):
-            max_rsq = trmse
+        # metric is rsq
+        if(trsq < max_rsq):
+            max_rsq = trsq
             best_epoch = epoch
             best_kernelMeans = kernelMeans
             best_kernelSigma = kernelSigma
