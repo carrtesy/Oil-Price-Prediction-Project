@@ -171,6 +171,13 @@ def train(trX, trY, teX, teY,
 
         # update kernel if it is best
         # metric is rsq
+        if epoch == 1:
+            max_rsq = trsq
+            best_epoch = epoch
+            best_kernelMeans = kernelMeans
+            best_kernelSigma = kernelSigma
+            best_kernelWeights = kernelWeights
+
         if(trsq < max_rsq):
             max_rsq = trsq
             best_epoch = epoch

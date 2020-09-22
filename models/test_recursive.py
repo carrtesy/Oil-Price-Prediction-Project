@@ -20,8 +20,8 @@ import data
 #mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
-#mode = "weekly_tau1_for_monthly"
-mode = "monthly"
+mode = "weekly_tau1_for_monthly"
+#mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
 

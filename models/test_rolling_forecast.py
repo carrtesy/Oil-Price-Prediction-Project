@@ -7,13 +7,13 @@ from dateutil.rrule import FR
 '''
 import data
 '''
-#mode = "daily"
+mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_for_monthly"
 #mode = "monthly"
 #mode = "weekly_data+"
-mode = "monthly_data+"
+#mode = "monthly_data+"
 
 dailyfile = open('./daily/wti.csv', 'r')
 weeklyfile = open('./weekly/wti_week.csv', 'r')
@@ -86,7 +86,7 @@ EPOCHS = 25
 MAX_KERNEL = 100
 
 # train or load model
-ON_TRAIN = False
+ON_TRAIN = True
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters
