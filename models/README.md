@@ -22,12 +22,13 @@
 | Daily |  |  |  |  |  |  |  |
 | *Weekly* | 85 | 1 | 7 | 0.039365 | 3.276904 | 0.973138 | 2.231803 |
 | *Weekly (rolling forecast)* | 85 | 1 | 7 | 0.039365 | 2.770204 | 0.980803 | 2.037372 |
-| Monthly (from monthly data) | 7 | 1 | 6 | 0.127713 | 50.732332 | -3.976902 | 36.233607 |
-| Monthly (from weekly data, P = 4) | 21 | 4 | 5 | 0.062536 | 7.580696 | 0.856241 | 5.441237 |
-| Monthly (from weekly data, P = 4, tau=1) | 55 | 1 | 10 | 0.131003 | 7.498386 | 0.859346 | 5.305326 |
-| Monthly (from weekly data, recursive) | 35 | 1 | 6 | 0.039665 | 7.160154 | 0.871749 | 5.282052 | 
-| Weekly (from daily data, augmentation) | 8 | 1 | 6 | 0.223460 | 5.157231 | 0.797327 | 3.303789 |
-| Monthly (from daily data, augmentation) | 28 | 1 | 5 | 0.163670 | 7.535780  | 0.567268 | 5.051230 |
+| *Monthly* | 99 | 1 | 6 | 0.104042 | 8.787111 | 0.803705 | 6.475776 |
+| *Monthly (rolling forecast)*| 99 | 1 | 6 | 0.104042 | 6.999179 | 0.875459 | 5.527021 |
+| Monthly (from weekly data, P = 4) | 22 | 4 | 5 | 0.062536 | 3.391234 | 0.971230 | 2.415184 |
+| Monthly (from weekly data, P = 4, tau=1) | 43 | 1 | 10 | 0.131003 | 3.214682 | 0.974148 | 2.369253 |
+| Monthly (from weekly data, recursive) | 37 | 1 | 6 | 0.039665 | 32.367137| -1.620753 | 27.356343 | 
+| Weekly (from daily data, augmentation) | 21 | 1 | 6 | 0.223460 | 2.321455 | 0.986935 | 1.227982 |
+| Monthly (from daily data, augmentation) | 17 | 1 | 5 | 0.086566 | 2.473987 | 0.985161 | 1.311006 |
 
 - ARIMA
 
