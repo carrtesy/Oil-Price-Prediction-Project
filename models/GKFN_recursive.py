@@ -100,7 +100,7 @@ def get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd):
     plt.plot(kernelnums, validerr, 'b')
     plt.legend(["Training Error", "Validation Error"])
     plt.xticks(np.arange(0, 100, 5))
-    plt.savefig('./plot.png')
+    plt.savefig('./plot2.png')
     plt.show()
 
     # return kernel with minimum validation error, and other kernel parameters
@@ -237,7 +237,7 @@ def rolling_forecast(teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeig
                           loop)
 
     # evaluate
-    f = open('./result.txt', 'w')
+    f = open('result2.txt', 'w')
     err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Yest)
     print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
@@ -273,18 +273,19 @@ def evaluate(data, teX, teY, teYdate, index_arr,
              ):
     """model test"""
     print("== EVALUATE ==")
-    f = open('./result.txt', 'w')
+    f = open('result2.txt', 'w')
 
     # recursive application
     assert(target_P % original_P == 0) # check if target P can be achieved using n step applications of interval original_P
-    loop = target_P - original_P + 1
+    gap = target_P - original_P
+    loop = gap + 1
     print("Iterative Application for {} times".format(loop))
 
     Y_hat = []
     print(len(teX))
     for idx, x_element in enumerate(teX):
         data_copy = copy.deepcopy(data)
-        data_at = index_arr[idx]
+        data_at = index_arr[idx] - gap
         x = x_element
         for i in range(0, loop):
             y_h = predict(x, kernelMeans, kernelSigma, kernelWeights)

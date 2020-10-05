@@ -18,9 +18,9 @@ add weekly_data+, monthly_data+ using daily data
 import data
 '''
 #mode = "daily"
-#mode = "weekly_origin"
+mode = "weekly_origin"
 #mode = "weekly_tau1"
-mode = "weekly_tau1_for_monthly"
+#mode = "weekly_tau1_for_monthly"
 #mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
@@ -87,8 +87,8 @@ trYdate = dateY[:-test_size]
 # Test
 teX = dataX[-test_size-gap:-gap]
 teY = dataY[-test_size:]
-teYdate = dateY[-test_size-gap:-gap]
-te_index = index[-test_size-gap:-gap]
+teYdate = dateY[-test_size:]
+te_index = index[-test_size:]
 
 '''
 train
@@ -99,7 +99,7 @@ EPOCHS = 25
 MAX_KERNEL = 100
 
 # train or load model
-ON_TRAIN = True
+ON_TRAIN = False
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters
@@ -127,8 +127,8 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-locater = mdates.DayLocator(interval = 720) # for daily data
-#locater = mdates.WeekdayLocator(byweekday = FR, interval = 102) # weekly
+#locater = mdates.DayLocator(interval = 720) # for daily data
+locater = mdates.WeekdayLocator(byweekday = FR, interval = 102) # weekly
 #locater = mdates.MonthLocator(bymonthday = 1, interval = 24) # monthly
 
 rmse, rsq, mae = GKFN_recursive.evaluate(data, teX, teY, teYdate, te_index,

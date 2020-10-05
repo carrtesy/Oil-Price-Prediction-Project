@@ -100,7 +100,7 @@ def get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd):
     plt.plot(kernelnums, validerr, 'b')
     plt.legend(["Training Error", "Validation Error"])
     plt.xticks(np.arange(0, 100, 5))
-    plt.savefig('./plot.png')
+    plt.savefig('./plot2.png')
     plt.show()
 
     # return kernel with minimum validation error, and other kernel parameters
@@ -230,7 +230,7 @@ def rolling_forecast(teX, teY,
                           kernelMeans, kernelSigma, kernelWeights)
 
     # evaluate
-    f = open('./result.txt', 'w')
+    f = open('result2.txt', 'w')
     err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Yest)
     print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
@@ -262,7 +262,7 @@ def evaluate(teX, teY,
         model test
     """
     print("== EVALUATE ==")
-    f = open('./result.txt', 'w')
+    f = open('result2.txt', 'w')
 
     err, rmse, rsq, mae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
     print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
