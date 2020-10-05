@@ -86,7 +86,7 @@ EPOCHS = 25
 MAX_KERNEL = 100
 
 # train or load model
-ON_TRAIN = True
+ON_TRAIN = False
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters
@@ -114,9 +114,9 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-locater = mdates.DayLocator(interval = 180) # for daily data
-#locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
-#locater = mdates.MonthLocator(bymonthday = 1, interval = 6) # monthly
+#locater = mdates.DayLocator(interval = 720) # for daily data
+#locater = mdates.WeekdayLocator(byweekday = FR, interval = 102) # weekly
+locater = mdates.MonthLocator(bymonthday = 1, interval = 24) # monthly
 
 rmse, rsq, mae = GKFN.rolling_forecast(teX, teY,
                                        teYdate,

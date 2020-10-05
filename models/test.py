@@ -82,11 +82,11 @@ train
 '''
 # parameter
 alpha = 0.5
-EPOCHS = 25
+EPOCHS = 1000
 MAX_KERNEL = 100
 
 # train or load model
-ON_TRAIN = True
+ON_TRAIN = False
 model_name = "model_" + mode + "_" + "E" + str(E) + "_" + "tau" + "_" + str(tau) + ".pickle"
 if(ON_TRAIN):
     # train model and get hyperparameters

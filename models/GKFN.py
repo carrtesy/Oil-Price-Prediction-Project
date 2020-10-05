@@ -136,7 +136,7 @@ def train(trX, trY, teX, teY,
     epochs_arr = []
     training_err = []
     testing_err = []
-    max_rsq = 0
+    min_err = sys.float_info.max
     best_kernelMeans = None
     best_kernelSigma = None
     best_kernelWeights = None
@@ -177,12 +177,12 @@ def train(trX, trY, teX, teY,
         training_err.append(rmse)
         testing_err.append(trmse)
         epochs_arr.append(epoch)
-        print("EPOCH {}: training r2 {}, test r2 {}".format(epoch, rsq, trsq))
+        print("EPOCH {}: training rmse {}, test rmse {}".format(epoch, rmse, trmse))
 
         # update kernel if it is best
-        # metric is rsq
-        if(trsq > max_rsq):
-            max_rsq = trsq
+        # metric is rmse
+        if(trmse < min_err):
+            min_err = trmse
             best_epoch = epoch
             best_kernelMeans = kernelMeans
             best_kernelSigma = kernelSigma
