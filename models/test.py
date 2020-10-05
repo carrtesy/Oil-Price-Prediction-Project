@@ -7,11 +7,11 @@ from dateutil.rrule import FR
 '''
 import data
 '''
-mode = "daily"
+#mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_tau1_for_monthly"
-#mode = "monthly"
+mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
 

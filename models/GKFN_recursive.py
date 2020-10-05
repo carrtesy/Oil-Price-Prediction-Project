@@ -100,12 +100,22 @@ def get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd):
     plt.plot(kernelnums, validerr, 'b')
     plt.legend(["Training Error", "Validation Error"])
     plt.xticks(np.arange(0, 100, 5))
-    plt.savefig('./plot2.png')
+    plt.savefig('./plot.png')
     plt.show()
 
     # return kernel with minimum validation error, and other kernel parameters
-    print("Kernel number that minimizes validerr: {}".format(kernelnums[np.argmin(validerr)]))
-    return kernelnums[np.argmin(validerr)], kernelMeans, kernelSigma, kernelWeights
+    # training error should be more than confintmin
+    minkernelnum = 2
+    minerr = sys.float_info.max
+    for n in range(len(kernelnums)):
+        if(trainerr[n] < confintmin):
+            break # prevent overfitting
+        if(validerr[n] < minerr):
+            minkernelnum = kernelnums[n]
+            minerr = validerr[n]
+
+    print("Kernel number that minimizes validerr: {}, err: {}".format(minkernelnum, minerr))
+    return minkernelnum, kernelMeans, kernelSigma, kernelWeights
 
 def train(trX, trY, teX, teY,
           epochs, num_kernels,
@@ -237,7 +247,7 @@ def rolling_forecast(teX, teY, num_kernels, kernelMeans, kernelSigma, kernelWeig
                           loop)
 
     # evaluate
-    f = open('result2.txt', 'w')
+    f = open('result.txt', 'w')
     err, rmse, rsq, mae = ft.loss_with_prediction_array(teY, Yest)
     print(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae))
     f.write(format('rmse: %f, R2: %f, MAE: %f') % (rmse, rsq, mae) + '\n')
@@ -273,7 +283,7 @@ def evaluate(data, teX, teY, teYdate, index_arr,
              ):
     """model test"""
     print("== EVALUATE ==")
-    f = open('result2.txt', 'w')
+    f = open('result.txt', 'w')
 
     # recursive application
     assert(target_P % original_P == 0) # check if target P can be achieved using n step applications of interval original_P
