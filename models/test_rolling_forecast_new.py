@@ -1,4 +1,4 @@
-import GKFN
+import GKFN_p as GKFN
 import ft
 import pickle
 import matplotlib.dates as mdates
@@ -82,7 +82,7 @@ train
 '''
 # parameter
 alpha = 0.5
-EPOCHS = 25
+EPOCHS = 300
 MAX_KERNEL = 100
 
 # train or load model
@@ -94,19 +94,18 @@ if(ON_TRAIN):
     m, kernelMeans, kernelSigma, kernelWeights = GKFN.get_kernel_info(trX, trY, teX, teY, alpha, kernel_num_bdd= MAX_KERNEL)
 
     print("=== Phase 2 & 3: training ===")
-    num_kernels, kernelMeans, kernelSigma, kernelWeights =\
+    Yest, num_kernels, kernelMeans, kernelSigma, kernelWeights, epoch =\
         GKFN.train(trX, trY, teX, teY,
                 epochs = EPOCHS, num_kernels= m,
-                kernelMeans = kernelMeans, kernelSigma=kernelSigma, kernelWeights=kernelWeights
-                )
+                kernelMeans = kernelMeans, kernelSigma=kernelSigma, kernelWeights=kernelWeights)
     print("Saving model at file : {}".format(model_name))
     with open(model_name, 'wb') as f:
-        pickle.dump([num_kernels, kernelMeans, kernelSigma, kernelWeights], f)
+        pickle.dump([Yest, num_kernels, kernelMeans, kernelSigma, kernelWeights, epoch], f)
 else:
     # load model
     print("Loading model at file : {}".format(model_name))
     with open(model_name, 'rb') as f:
-        num_kernels, kernelMeans, kernelSigma, kernelWeights = pickle.load(f)
+        Yest, num_kernels, kernelMeans, kernelSigma, kernelWeights, epoch = pickle.load(f)
 
 '''
 evaluate
@@ -114,12 +113,8 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-locater = mdates.DayLocator(interval = 180) # for daily data
+#locater = mdates.DayLocator(interval = 180) # for daily data
 #locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
-#locater = mdates.MonthLocator(bymonthday = 1, interval = 6) # monthly
+locater = mdates.MonthLocator(bymonthday = 1, interval = 6) # monthly
 
-rmse, rsq, mae = GKFN.rolling_forecast(teX, teY,
-                                       teYdate,
-                                       num_kernels,
-                                       kernelMeans, kernelSigma, kernelWeights,
-                                       formatter, locater)
+GKFN.plot_prediction(teY, teYdate, Yest, num_kernels, epoch, formatter, locater)
