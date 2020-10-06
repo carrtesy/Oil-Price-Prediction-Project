@@ -177,8 +177,8 @@ def train(trX, trY, teX, teY,
         terr, trmse, trsq, trmae = ft.loss(teX, teY, kernelMeans, kernelSigma, kernelWeights)
         print("EPOCH {}: training r2 {}, test r2 {}".format(epoch, rsq, trsq))
 
-        # check epoch 75, 150, 300
-        if epoch == 75 or epoch == 150 or epoch == 300:
+        # check epoch 30, 60, 100
+        if epoch == 30 or epoch == 60 or epoch == 100:
 
             Yest, termse, tersq, temae = rolling_forecast(teX, teY, num_kernels, kernelMeans,
                                                     kernelSigma, kernelWeights)
