@@ -82,7 +82,7 @@ train
 '''
 # parameter
 alpha = 0.5
-EPOCHS = 300
+EPOCHS = 100
 MAX_KERNEL = 100
 
 # train or load model
