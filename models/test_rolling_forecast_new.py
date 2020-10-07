@@ -7,11 +7,11 @@ from dateutil.rrule import FR
 '''
 import data
 '''
-#mode = "daily"
+mode = "daily"
 #mode = "weekly_origin"
 #mode = "weekly_tau1"
 #mode = "weekly_for_monthly"
-mode = "monthly"
+#mode = "monthly"
 #mode = "weekly_data+"
 #mode = "monthly_data+"
 
@@ -113,8 +113,12 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-#locater = mdates.DayLocator(interval = 180) # for daily data
+locater = mdates.DayLocator(interval = 180) # for daily data
 #locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
+<<<<<<< Updated upstream
 locater = mdates.MonthLocator(bymonthday = 1, interval = 6 * 4) # monthly
+=======
+#locater = mdates.MonthLocator(bymonthday = 1, interval = 6) # monthly
+>>>>>>> Stashed changes
 
 GKFN.plot_prediction(teY, teYdate, Yest, num_kernels, epoch, formatter, locater)
