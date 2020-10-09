@@ -7,9 +7,9 @@ from dateutil.rrule import FR
 '''
 import data
 '''
-mode = "daily"
+#mode = "daily"
 #mode = "weekly_origin"
-#mode = "weekly_tau1"
+mode = "weekly_tau1"
 #mode = "weekly_for_monthly"
 #mode = "monthly"
 #mode = "weekly_data+"
@@ -51,8 +51,8 @@ elif(mode == "weekly_data+"): # weekly_data+
     tau = 1
 elif(mode == "monthly_data+"): # weekly_data+
     print("===MONTHLY DATASET===")
-    dates, data = ft.readData(dailyfile, '1986-01-02', '2020-08-31')
-    E = 5
+    dates, data = ft.readData(weeklyfile, '1986-01-03', '2020-08-28')
+    E = 6
     tau = 1
 
 '''
@@ -113,12 +113,9 @@ evaluate
 
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
-locater = mdates.DayLocator(interval = 180) # for daily data
-#locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
-<<<<<<< Updated upstream
-locater = mdates.MonthLocator(bymonthday = 1, interval = 6 * 4) # monthly
-=======
-#locater = mdates.MonthLocator(bymonthday = 1, interval = 6) # monthly
->>>>>>> Stashed changes
+#locater = mdates.DayLocator(interval = 180) # for daily data
+locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
+#locater = mdates.MonthLocator(bymonthday = 1, interval = 6 * 4) # monthly
+
 
 GKFN.plot_prediction(teY, teYdate, Yest, num_kernels, epoch, formatter, locater)
