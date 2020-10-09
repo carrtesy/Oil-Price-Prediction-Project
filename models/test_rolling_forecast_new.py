@@ -114,8 +114,8 @@ evaluate
 # plot formatters
 formatter = mdates.DateFormatter("%Y-%m-%d") # date format for plotting
 #locater = mdates.DayLocator(interval = 180) # for daily data
-#locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
-locater = mdates.MonthLocator(bymonthday = 1, interval = 6 * 4) # monthly
+locater = mdates.WeekdayLocator(byweekday = FR, interval = 26 * 4) # weekly
+#locater = mdates.MonthLocator(bymonthday = 1, interval = 6 * 4) # monthly
 
 
 GKFN.plot_prediction(teY, teYdate, Yest, num_kernels, epoch, formatter, locater)
