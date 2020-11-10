@@ -1,16 +1,19 @@
 # Oil Price Prediction Project
 ## New Version
 
+### Paper
+
+
 ### Smoothness Measure
 - daily
     
-    ![daily](./daily/sm_3d.png)
+    ![daily](./models/daily/sm_3d.png)
 - weekly
 
-    ![weekly](./weekly/sm_3d.png)
+    ![weekly](./models/weekly/sm_3d.png)
 - monthly
     
-    ![monthly](./monthly/sm_3d.png)
+    ![monthly](./models/monthly/sm_3d.png)
         
 
 ### Models to evaluate
