@@ -1,20 +1,16 @@
 # Oil Price Prediction Project
-## New Version
+## From 2020-03-01, On Progress
+
 
 ### Paper
+[Crude oil price prediction based on Gaussian Kernel Function Networks](https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/%EA%B0%80%EC%9A%B0%EC%8B%9C%EC%95%88%20%EC%BB%A4%EB%84%90%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%9B%90%EC%9C%A0%EA%B0%80%EA%B2%A9%EC%98%88%EC%B8%A1(%EC%84%B1%EA%B7%A0%EA%B4%80%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B9%80%EB%8F%99%EB%AF%BC%2C%20%EC%8B%A0%EC%84%B1%EA%B5%AD).pdf)
 
+### Smoothness Measure Example (daily)
+![daily](./models/daily/sm_3d.png)
 
-### Smoothness Measure
-- daily
+### dataset
+
     
-    ![daily](./models/daily/sm_3d.png)
-- weekly
-
-    ![weekly](./models/weekly/sm_3d.png)
-- monthly
-    
-    ![monthly](./models/monthly/sm_3d.png)
-        
 
 ### Models to evaluate
 
