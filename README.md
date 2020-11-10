@@ -38,7 +38,7 @@
 
 ## Evaluations
 
--  GKFN
+### GKFN
 
 | Model  | kernel # | tau | E | SM |  RMSE | R Square |  MAE |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -54,7 +54,7 @@
 | Weekly (from daily data, augmentation) | 21 | 1 | 6 | 0.223460 | 2.321455 | 0.986935 | 1.227982 |
 | Monthly (from daily data, augmentation) | 17 | 1 | 5 | 0.086566 | 2.473987 | 0.985161 | 1.311006 |
 
-- ARIMA
+### ARIMA
 
 Hyperparameter settings
 
