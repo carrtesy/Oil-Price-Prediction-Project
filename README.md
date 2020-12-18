@@ -77,3 +77,9 @@ Model Performance
 [wti_daily]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/wti.csv
 [wti_week]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/wti_week.csv
 [wti_month]: https://github.com/dongminkim0220/Oil-Price-Prediction-Project/blob/master/dataset/wti_month.csv
+
+### References
+
+- Kim D.K., Kil R.M. (2013) Stock Price Prediction Based on a Network with Gaussian Kernel Functions. In: Lee M., Hirose A., Hou ZG., Kil R.M. (eds) Neural Information Processing. ICONIP 2013. Lecture Notes in Computer Science, vol 8227. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-42042-9_87
+- Rhee M. Kil. (1993). Function Approximation Based on a Network with Kernel Functions of Bounds and Locality : an Approach of Non-Parametric Estimation. [ETRI] ETRI Journal, 15(2), 0-0.
+- Sukhan Lee, Rhee M. Kil, A Gaussian potential function network with hierarchically self-organizing learning, Neural Networks, Volume 4, Issue 2, 1991, Pages 207-224, ISSN 0893-6080, https://doi.org/10.1016/0893-6080(91)90005-P. (http://www.sciencedirect.com/science/article/pii/089360809190005P)
